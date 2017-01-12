@@ -42,10 +42,30 @@ $route['default_controller'] = "home";
 $route['dev'] = 'dev';
 
 
+
+
+$route['admin/login'] = 'admin/login';
+$route['admin'] = 'admin';
+$route['admin/users'] = 'user';
+$route['admin/logout'] = 'logout';
+$route['admin/processajax/(:any)'] = 'user/socialform/$1';
+$route['admin/ajaxcontactnumbers/(:any)'] = 'user/contactform/$1';
+$route['admin/user/media/(:any)'] = "user/media/$1";
+$route['admin/user/(:any)'] = "user/userprofile/$1";
+$route['admin/validate/(:any)'] = "user/uservalidate/$1";
+$route['admin/deleteuser/(:any)'] = "user/userdelete/$1";
+$route['admin/confirmuserdelete/(:any)'] = "user/confirmuserdelete/$1";
+$route['admin/uploadprofile/(:any)'] = "upload/index/$1";
+$route['admin/uploadmedia/(:any)'] = "upload/media/$1";
+$route['admin/updatemedia/(:any)'] = "user/updatemedia/$1";
+$route['admin/deletemedia/(:any)'] = "user/deletemedia/$1";
+$route['admin/addtestusers'] = "user/addtestusers";
+
+
+
+
 $route['category/(:any)'] = 'home/category/$1';
 $route['user/(:any)'] = 'home/user/$1';
-
-$route['admin'] = 'admin';
 $route['morecategorusers'] = 'home/moreCategorUsers';
 $route['search'] = 'home/search';
 $route['makefollow'] = 'followers/follow';
@@ -58,8 +78,9 @@ $route['signup'] = 'signup';
 $route['signup/try'] = 'signup/try';
 $route['follower/(:any)/pick-categories'] = 'followers/pickcategories';
 $route['follower/(:any)'] = 'followers/profile';
-$route['login'] = 'login';
+
 $route['logout'] = 'logout';
+$route['login'] = 'followers/login';
 $route['about'] = 'home/about';
 $route['blog'] = 'home/blog';
 $route['trending'] = 'home/trending';
@@ -68,23 +89,11 @@ $route['user/add'] = 'user/add';
 $route['user/delete'] = 'user/delete';
 $route['profile'] = 'user/profile';
 $route['settings'] = 'user/settings';
-$route['admin/users'] = 'user';
-$route['admin/processajax/(:any)'] = 'user/socialform/$1';
-$route['admin/ajaxcontactnumbers/(:any)'] = 'user/contactform/$1';
-
-$route['admin/user/media/(:any)'] = "user/media/$1";
-$route['admin/user/(:any)'] = "user/userprofile/$1";
-$route['admin/validate/(:any)'] = "user/uservalidate/$1";
-$route['admin/deleteuser/(:any)'] = "user/userdelete/$1";
-$route['admin/confirmuserdelete/(:any)'] = "user/confirmuserdelete/$1";
-$route['admin/uploadprofile/(:any)'] = "upload/index/$1";
-$route['admin/uploadmedia/(:any)'] = "upload/media/$1";
-$route['admin/updatemedia/(:any)'] = "user/updatemedia/$1";
-$route['admin/deletemedia/(:any)'] = "user/deletemedia/$1";
 
 
 
-$route['admin/addtestusers'] = "user/addtestusers";
+
+
 
 
 

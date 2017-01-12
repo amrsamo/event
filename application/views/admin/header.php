@@ -83,7 +83,7 @@
                 </button>
                 <a class="navbar-brand" href="#" style="width:10%;" >
                     <p>
-                        <?php echo ($this->session->userdata['username']); ?>
+                        <?php echo ($this->session->userdata['admin']->username); ?>
                     </p>
                 </a>
             </div>
@@ -100,7 +100,7 @@
                         <li><a href="<?php echo base_url(); ?>settings"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="<?php echo base_url(); ?>logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="<?php echo base_url(); ?>admin/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->

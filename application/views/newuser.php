@@ -16,7 +16,12 @@
                     <?php if (isset($social)): ?>
                       <?php foreach ($social as $x): ?>
                         <a href="<?= $x->link; ?>" target="_blank">
-                          <i class="fa fa-<?= $x->name; ?>-square fa-2x" aria-hidden="true"></i>
+                          <?php if ($x->name == 'instagram'): ?>
+                            <i class="fa fa-<?= $x->name; ?> fa-2x" aria-hidden="true"></i>
+                          <?php else: ?>
+                            <i class="fa fa-<?= $x->name; ?>-square fa-2x" aria-hidden="true"></i>
+                          <?php endif ?>
+                          
                         </a>
                       <?php endforeach ?>
                     <?php endif ?>

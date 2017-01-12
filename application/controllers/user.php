@@ -4,8 +4,8 @@ class User extends CI_Controller {
 
 	public function index()
 	{
-		// if(!$this->isLoggedIn())
-		// 	redirect('/');
+		if(!$this->isLoggedIn())
+			redirect('/');
 
 		$data = array();
 		$data['users'] = $this->Adminuser->get(array("type !="=>6),null,5000,0);
@@ -168,8 +168,8 @@ class User extends CI_Controller {
 		if(!$this->isLoggedIn())
 			redirect('/');
 
-			$data = array();
-			$data['user'] = $this->session->userdata;
+
+			$data['user'] = $this->session->userdata['admin'];
 			$this->load->view('admin/profile',$data);
 	}
 
@@ -394,7 +394,7 @@ class User extends CI_Controller {
 			redirect('/');
 
 			$data = array();
-			$data['user'] = $this->session->userdata;
+			$data['user'] = $this->session->userdata['admin'];
 
 			if(isset($_POST['password']))
 			{
@@ -429,7 +429,7 @@ class User extends CI_Controller {
 
 	public function isLoggedIn()
 	{
-		if(isset($this->session->userdata['user_id']))
+		if(isset($this->session->userdata['admin']))
 			return true;
 		return false;
 	}

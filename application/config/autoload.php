@@ -109,7 +109,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('Base_Model','Video','Adminuser','Amazons3','Country','City','Usertype','Profilepicture','Socialnetwork','User_Social','Contactnumbertype','User_Contact','Media','Category','Follower','Media_Statistics');
+$autoload['model'] = array('Base_Model','Video','Adminuser','Amazons3','Country','City','Usertype','Profilepicture','Socialnetwork','User_Social','Contactnumbertype','User_Contact','Media','Category','Follower','Media_Statistics','Adminsystem');
 
 
 /* End of file autoload.php */

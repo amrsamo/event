@@ -101,13 +101,17 @@ class followers extends CI_Controller {
 	}
 
 	public function login()
-	{
-		$process = $this->Follower->login($_POST);
-		if(!$process)
+	{	
+		if(isset($_POST['email']))
 		{
-
+			$process = $this->Follower->login($_POST);
+			if(!$process)
+			{
+				$this->load->view('login',$this->data);
+			}
 		}
-		$this->load->view('home',$this->data);
+		
+		$this->load->view('newhome',$this->data);
 	}
 
 

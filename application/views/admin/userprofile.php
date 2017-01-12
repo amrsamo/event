@@ -82,7 +82,7 @@
                     <div class="row">
                         <div class="form-group col-sm-4">
                             <label for="bio" class="h4">Bio</label>
-                            <textarea rows="4" cols="50" name="bio" class="form-control" id="bio" required><?= isset($_POST['bio']) ? $_POST['bio'] : $user->bio?>
+                            <textarea rows="4" cols="50" name="bio" maxlength="350" class="form-control" id="bio" required><?= isset($_POST['bio']) ? $_POST['bio'] : $user->bio?>
                             </textarea>
                         </div>
                         <div class="form-group col-sm-4 col-sm-offset-1">
