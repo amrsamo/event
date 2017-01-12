@@ -1,2 +1,3 @@
 # ignore config file
 /application/config/config.php
+/application/config/database.php
