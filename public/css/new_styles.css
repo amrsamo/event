@@ -299,14 +299,17 @@ a:hover {
 }
 
 .one-user-div:hover{
-  border:1px solid #27ae60;
-  /*background-color: #2b2b2b;*/
+  /*border:1px solid #27ae60;*/
+  background-color: #eaeaea;
+  /*background: rgba(0,0,0,0.1);*/
 }
 .one-user-div{
   padding: 2%;
   color:#cdcdcd;
   border:1px solid #cdcdcd;
-  height:300px !important;
+  /*height:325px !important;*/
+  height:auto;
+  border-radius: 10px;
 }
 
 .one-media-div:hover{
