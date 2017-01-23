@@ -85,7 +85,7 @@
     <div class="row" style="padding-top:20px;">
         <div class="col-sm-4" style="text-align: center;">
           <p style="font-size:1.4em;text-align: center;">FOLLOWER</p>
-          <img class="col-sm-6 col-sm-offset-3" src="<?= base_url();?>public/media/icons/follower.png">
+          <!-- <img class="col-sm-6 col-sm-offset-3" src="<?= base_url();?>public/media/icons/follower.png"> -->
           <!-- <i class="fa fa-users fa-5x" aria-hidden="true"></i> -->
           <p class="about_desc col-sm-12" style="font-size:1.2em;color:#777">
             If you like to follow the scene in Egypt and what's trending regarding the events, <a href="">Eventopic</a> can get you all the information you need in one place. 
@@ -93,7 +93,7 @@
         </div>
         <div class="col-sm-4" style="text-align: center;">
           <p style="font-size:1.4em;text-align: center;">TALENT</p>
-          <img class=" col-sm-6 col-sm-offset-3" src="<?= base_url();?>public/media/icons/talent.png">
+          <!-- <img class=" col-sm-6 col-sm-offset-3" src="<?= base_url();?>public/media/icons/talent.png"> -->
           <!-- <i class="fa fa-asterisk fa-5x" aria-hidden="true"></i> -->
           <p class="about_desc col-sm-12" style="font-size:1.2em;color:#777">
             Add your portfolio and show your talent on <a href="">Eventopic</a>, The one place that has it all ;) 
@@ -101,12 +101,50 @@
         </div>
         <div class="col-sm-4" style="text-align: center;">
           <p style="font-size:1.4em;text-align: center;">VENUE</p>
-          <img class=" col-sm-6 col-sm-offset-3" src="<?= base_url();?>public/media/icons/hotel.png">
+          <!-- <img class=" col-sm-6 col-sm-offset-3" src="<?= base_url();?>public/media/icons/hotel.png"> -->
           <!-- <i class="fa fa-location-arrow fa-5x" aria-hidden="true"></i> -->
           <p class="about_desc col-sm-12" style="margin-top:5%;font-size:1.2em;color:#777">
             Are you interested in renting your venue for events? Add your portfolio on <a href="">Eventopic</a> and get more requests every day.
           </p>
-        </div> 
+        </div>
+
+        <div class="col-sm-12 text-center" style="margin-top:5%;">
+          <h3 style="background-color: black;color:white;">OUR LUCKY SIGNS</h3>
+        </div>
+        <div class="row">
+            <div class="col-sm-4" style="text-align: center;">
+            <p style="font-size:1.3em;text-align: center;">4 Leave Clover</p>
+            <img class=" col-sm-4 col-sm-offset-4 img-responsive" src="<?= base_url();?>public/images/signs/4leaveclover.png">
+          </div>
+          <div class="col-sm-4" style="text-align: center;">
+            <p style="font-size:1.3em;text-align: center;">Wishbone</p>
+            <img class=" col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/wishbone.png">
+          </div> 
+          <div class="col-sm-4" style="text-align: center;">
+            <p style="font-size:1.3em;text-align: center;">Lady Bird</p>
+            <img class=" col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/ladybird.png">
+          </div> 
+        </div>
+        
+        <div class="row" style="margin-top: 5%;">
+          <div class="col-sm-4" style="text-align: center;">
+            <p style="font-size:1.4em;text-align: center;">barnstar</p>
+            <img class=" col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/barnstar.png">
+          </div> 
+          <div class="col-sm-4" style="text-align: center;">
+            <p style="font-size:1.4em;text-align: center;">horseshoe</p>
+            <img class=" col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/horseshoe.png">
+          </div> 
+          <div class="col-sm-4" style="text-align: center;">
+            <p style="font-size:1.4em;text-align: center;">fish</p>
+            <img class=" col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/fish.png">
+          </div>
+        </div>
+        
+        <div class="col-sm-4 col-sm-offset-4" style="text-align: center;margin-top: 5%;">
+          <p style="font-size:1.4em;text-align: center;">dream catcher</p>
+          <img class=" col-sm-4 col-sm-offset-4" style="height:100px;" src="<?= base_url();?>public/images/signs/dreamcatcher.png">
+        </div>   
     </div>
 
     <p style="color:black;font-size: 1.4em;text-align: center;width:80%;margin-left:10%;padding:2%;">
