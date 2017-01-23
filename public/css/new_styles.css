@@ -685,8 +685,13 @@ footer .nav>li>a:hover {
   h2{text-align: left;}
   h4 {font: 300 1.2em Roboto,Arial,Helvetica;}
   
-  .fish{
+  /*.fish{
     width:100px;
+  }*/
+
+  .lucky{
+    width:90px !important;
+    height:60px !important;
   }
   .spacer{padding:2em 0 ;}
   .grid.team div{margin: 0;padding: 0;}

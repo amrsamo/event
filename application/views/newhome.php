@@ -114,36 +114,36 @@
         <div class="row">
             <div class="col-sm-4 col-xs-4" style="text-align: center;">
             <p style="font-size:1.3em;text-align: center;">4 Leave Clover</p>
-            <img class=" col-sm-4 col-sm-offset-4 img-responsive" src="<?= base_url();?>public/images/signs/4leaveclover.png">
+            <img class="lucky col-sm-4 col-sm-offset-4 img-responsive" src="<?= base_url();?>public/images/signs/4leaveclover.png">
           </div>
           <div class="col-sm-4 col-xs-4" style="text-align: center;">
             <p style="font-size:1.3em;text-align: center;">Wishbone</p>
-            <img class=" col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/wishbone.png">
+            <img class="lucky col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/wishbone.png">
           </div> 
           <div class="col-sm-4 col-xs-4" style="text-align: center;">
             <p style="font-size:1.3em;text-align: center;">Lady Bird</p>
-            <img class="fish col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/ladybird.png">
+            <img class="lucky col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/ladybird.png">
           </div> 
         </div>
         
         <div class="row" style="margin-top: 5%;">
           <div class="col-sm-4 col-xs-4" style="text-align: center;">
             <p style="font-size:1.4em;text-align: center;">barnstar</p>
-            <img class=" col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/barnstar.png">
+            <img class="lucky col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/barnstar.png">
           </div> 
           <div class="col-sm-4 col-xs-4" style="text-align: center;">
             <p style="font-size:1.4em;text-align: center;">horseshoe</p>
-            <img class=" col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/horseshoe.png">
+            <img class="lucky col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/horseshoe.png">
           </div> 
           <div class="col-sm-4 col-xs-4" style="text-align: center;">
             <p style="font-size:1.4em;text-align: center;">fish</p>
-            <img class="fish col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/fish.png">
+            <img class="lucky col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/fish.png">
           </div>
         </div>
         
         <div class="col-sm-4 col-xs-4 col-xs-offset-4 col-sm-offset-4" style="text-align: center;margin-top: 5%;">
           <p style="font-size:1.4em;text-align: center;">dream catcher</p>
-          <img class=" col-sm-4 col-sm-offset-4" style="height:100px;" src="<?= base_url();?>public/images/signs/dreamcatcher.png">
+          <img class="lucky col-sm-4 col-sm-offset-4" style="height:100px;" src="<?= base_url();?>public/images/signs/dreamcatcher.png">
         </div>   
     </div>
 
