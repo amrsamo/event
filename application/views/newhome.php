@@ -122,7 +122,7 @@
           </div> 
           <div class="col-sm-4 col-xs-4" style="text-align: center;">
             <p style="font-size:1.3em;text-align: center;">Lady Bird</p>
-            <img class=" col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/ladybird.png">
+            <img class="fish col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/ladybird.png">
           </div> 
         </div>
         
@@ -137,7 +137,7 @@
           </div> 
           <div class="col-sm-4 col-xs-4" style="text-align: center;">
             <p style="font-size:1.4em;text-align: center;">fish</p>
-            <img class=" col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/fish.png">
+            <img class="fish col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/fish.png">
           </div>
         </div>
         

@@ -685,7 +685,9 @@ footer .nav>li>a:hover {
   h2{text-align: left;}
   h4 {font: 300 1.2em Roboto,Arial,Helvetica;}
   
-
+  .fish{
+    width:100px;
+  }
   .spacer{padding:2em 0 ;}
   .grid.team div{margin: 0;padding: 0;}
   figure.effect-chico figcaption {padding: 1.5em;}
