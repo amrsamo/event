@@ -9,19 +9,19 @@
             <?php endif ?>
           </a>
         </div>
-        <div class="col-sm-2 col-xs-4 nopadding">
+        <div class="col-sm-6 col-xs-4 nopadding">
           <a class="myanchor" href="<?= base_url(); ?>user/<?= $user->username; ?>">
-            <p class="small-line-height bold"><?= $user->username; ?></p>
-            <p class="small-line-height"><?= $user->type_name; ?></p>
+            <p class="small-line-height bold nopadding nomargin"><?= $user->username; ?></p>
+            <p class="small-line-height nopadding"><small><?= $user->type_name; ?></small></p>
           </a>
         </div>
         <div class="col-sm-4 col-xs-4 pull-right">
             <button style="<?= ($user->relation)? '' : 'display:none;' ; ?>" value="<?= $user->user_id; ?>" id="unfollow_<?= $user->user_id; ?>" class="unfollowBTN btn btn-main btn-block headerBTN">
-             <i class="fa fa-check-square-o" aria-hidden="true"></i>
+             <!-- <i class="fa fa-check-square-o" aria-hidden="true"></i> -->
               Following
             </button>
              <button style="<?= ($user->relation)? 'display:none;' : '' ; ?>" value="<?= $user->user_id; ?>" id="follow_<?= $user->user_id; ?>" class="followBTN btn btn-block headerBTN">
-            <i class="fa fa-square-o" aria-hidden="true"></i>
+            <!-- <i class="fa fa-square-o" aria-hidden="true"></i> -->
             Follow
             </button>
         </div>

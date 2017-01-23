@@ -1,6 +1,9 @@
 <?php include('newheader.php'); ?>
 
-<section class="container" id="section1" style="min-height: 50%;">
+
+
+
+<section class="" id="section1" style="min-height: 50%;">
     <div class="">
         <h1 class="text-center"><?= $category_name; ?></h1>
         <h2 class="text-center lato animate slideInDown" style="width:90%;margin:0 auto;">
@@ -16,9 +19,15 @@
     </a>
 </section>
 
-<div class="container content" id="section2">
-
-   <div class="row">
+<div class="container-nofull" id="section2">
+    <div class="newbanner text-center">
+      <h2 style="font-size: 200%;text-align: center;">
+        CHECK OUT THE BEST
+      </h2>
+    </div>
+<div class="bannerspacer"></div>
+   <div class="category_content" style="padding-top: 2%;">
+     <div class="row">
     <div class="col-sm-8 col-xs-12">
       <div class="col-sm-2 col-xs-2">
         <div class="form-group">
@@ -60,7 +69,7 @@
 
 
 
-  <div class="row myspacer categoryajaxcontent">
+  <div class=" myspacer categoryajaxcontent">
     <?php foreach ($users as $user): ?>
      <?php include('user-modal.php'); ?>
     <?php endforeach ?>
@@ -74,6 +83,9 @@
       <input type="hidden" id="x1" value="0">
       <i class="fa fa-spinner fa-spin fa-2x"></i>
   </div>
+   </div>
+
+
 </div>
 
 

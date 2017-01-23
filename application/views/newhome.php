@@ -1,18 +1,23 @@
 <?php include('newheader.php'); ?>
 
-<section class="container-fluid" id="section1" style="background-color: rgba(0,0,0,0.3);">
-    <div class="v-center">
+
+<input type="hidden" id="homepage" value="1">
+<section class="container-fluid" id="landing" style="background-color: rgba(0,0,0,0.3);">
+    <div class="v-center landing_content">
         <h1 class="text-center">Your Personal Event Planner</h1>
-        <h2 class="text-center lato animate slideInDown">Be your own event planner with <b>EvenTopic</b></h2>
+        <h2 class="text-center lato animate slideInDown">You Know Best How To Plan</h2>
         <p class="text-center">
             <br>
-            <?php if ($isLoggedIn): ?>
-              <a href="<?= base_url(); ?>category/Capture%20The%20Moment" class="btn btn-main btn-lg btn-huge">Check Our Photographers!</a>
-            <?php else: ?>
-              <a href="#" class="btn btn-main btn-lg btn-huge" data-toggle="modal" data-target="#registerModal">Sign Up For Free</a>
-            <?php endif ?>
-            
-            <a href="<?= base_url(); ?>trending" class="btn btn-main btn-lg btn-huge">What's Trending?</a>
+            <div class="col-sm-12 text-center">
+              <?php if ($isLoggedIn): ?>
+                   <a href="<?= base_url(); ?>category/Capture%20The%20Moment" class="landing_a">Check Our Photographers!</a>
+              <?php else: ?>
+                <a href="#" class="landing_a" data-toggle="modal" data-target="#registerModal">
+                  Sign Up For Free
+                </a>
+              <?php endif ?>
+              <a href="<?= base_url(); ?>" class="landing_a">What's Trending?</a>
+            </div>
         </p>
     </div>
     <a href="#categories">
@@ -25,21 +30,34 @@
 </section>
 
 
-<section class="container-fluid" id="categories" style="margin-bottom: 0px;padding:0px;">
-<div class="grid" style="padding:0px;color:black;background-color: white;">
+<section class="container-fluid container-nofull" id="categories" style="">
+<div class="newbanner text-center">
+  <h2 style="font-size: 200%;">
+    CATEGORIES
+  </h2>
+</div>
+<div class="bannerspacer"></div>
+<div class="grid">
   <?php foreach ($categories as $x): ?>
-  <div class="col-sm-4" style="padding:0px;">
+  <div class="col-sm-4 " style="padding:0px;">
+    <div class="imagecaption-xs visible-xs">
+          <!-- <h4 style="font-size:1.2em">
+            <?= $x->name; ?>
+          </h4> -->
+      </div>
     <div>
-      <figure class="effect-oscar  wowload fadeInUp" style="width:100%;">
-        <img class="img-responsive" style="height:400px;width:100%;" src="<?= base_url().$x->image_url ?>" alt="img01"/>
+      <figure class="effect-oscar  wowload fadeInUp" style="width:100%;padding:1%;background-color: white;">
+        <img class="img-responsive category_image" style="width:100%;" src="<?= base_url().$x->image_url ?>" alt="img01"/>
         <figcaption style="padding-top:35%;">
                 <p class="p-large"><?= $x->info; ?><br>
                 <a href="<?= base_url().'category/'.rawurlencode($x->name); ?>" title="<?= $x->name; ?>" style="text-decoration:none;border:none;">
-                  <button style="margin-top:5%;" type="button" class="btn btn-main btn-default bottomaligned">Check it out</button>
+                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                  Check Out The Best
                 </a>
+                </p>
             </figcaption>
       </figure>
-      <div class="imagecaption">
+      <div class="imagecaption hidden-xs" style="display: none;">
           <h4 style="font-size:1.2em">
             <?= $x->name; ?>
           </h4>
@@ -50,15 +68,20 @@
 </div>
 </section>
 
-<section class="container-fluid" id="about">
-    <div class="container v-center" style="margin-top: 0px;">
+<section class="container-fluid container-nofull" id="about">
+    <div class="white">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="text-center">About</h1>
-                <hr>
+                <div class="newbanner text-center">
+                  <h2 style="font-size: 200%;">
+                    ABOUT
+                  </h2>
+                </div>
             </div>
         </div>
-<div class="col-sm-12 col-sm-offset-" style="">
+        <div class="bannerspacer"></div>
+
+<div class="section-white-content">
     <div class="row" style="padding-top:20px;">
         <div class="col-sm-4" style="text-align: center;">
           <p style="font-size:1.4em;text-align: center;">FOLLOWER</p>
@@ -102,15 +125,22 @@
 
 
 
-<section id="contact">
-    <div class="container v-center">
-        <div class="row">
+
+
+
+<section class="container-fluid container-nofull" id="contact">
+    <div class="white">
+         <div class="row">
             <div class="col-md-12">
-                <h1 class="text-center">Make Contact</h1>
-                <hr>
+                <div class="newbanner text-center">
+                  <h2 style="font-size: 200%;">
+                    CONTACT
+                  </h2>
+                </div>
             </div>
         </div>
-        <div class="row">
+        <div class="bannerspacer"></div>
+        <div class="row section-white-content">
             <div class="col-md-8 col-md-offset-1">
                 <div class="row form-group">
                     <div class="col-sm-3">

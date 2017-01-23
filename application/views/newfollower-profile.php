@@ -1,6 +1,6 @@
 <?php include('newheader.php'); ?>
 
-<section class="container" id="section1" style="min-height: 60%;">
+<section class="container" id="follower_section" style="min-height: 60%;">
     <div class="col-sm-12 container">
         
         <div class="row">

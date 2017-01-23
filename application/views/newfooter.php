@@ -119,7 +119,7 @@
               <hr class="colorgraph">
               <div class="row">
                 <div class="col-xs-12 col-md-6 col-md-offset-3">
-                <input type="submit" name="register" value="Register Now" class="btn btn-main btn-block btn-lg" tabindex="7"></div>
+                <input type="submit" name="register" value="Register Now" class="btn btn-main btn-block " tabindex="7"></div>
               </div>
             </form>
           </div>
@@ -134,7 +134,7 @@
               <hr class="colorgraph">
               <div class="row">
                 <div class="col-xs-12 col-md-6 col-md-offset-3">
-                <input type="submit" name="register" value="Login" class="btn btn-main btn-block btn-lg" tabindex="7"></div>
+                <input type="submit" name="register" value="Login" class="btn btn-main btn-block" tabindex="7"></div>
               </div>
             </form>
           </div>

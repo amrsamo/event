@@ -36,8 +36,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#section1">
-                <img class="img-responsive" style="height:40px;width:40px;margin-top: -20%;" src="<?= base_url(); ?>public/images/logo circle green.png">
+            <a class="navbar-brand brand hide" href="#section1">
+                <img class="img-responsive" src="<?= base_url(); ?>public/images/logo circle green.png">
             </a>
             <a class="navbar-brand" href="<?= base_url(); ?>">
                 EVENTOPIC
@@ -45,9 +45,9 @@
         </div>
         <div class="navbar-collapse collapse" id="navbar-collapsible">
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="#section1">Home</a></li>
+                <li><a href="#landing">Home</a></li>
                 <li><a href="#categories">Categories</a>
-                    <ul class="fallback">
+                    <ul class="fallback hidden-xs">
                         <?php foreach ($categories as $x): ?>
                             <li><a href="<?= base_url().'category/'.rawurlencode($x->name); ?>">
                                 <?= ($x->name); ?>
@@ -60,45 +60,39 @@
                 <li><a href="#section5">Trending</a></li>
                 <li>&nbsp;</li>
             </ul>
-            <div class="nav navbar-nav navbar-left col-sm-2 col-md-3">
-                <form class="navbar-form" role="search">
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon2">
-                      <span class="input-group-addon" id="basic-addon2">
-                          <i class="glyphicon glyphicon-search"></i>
-                      </span>
-                    </div>
-                </form>
-            </div>
-            <ul class="nav navbar-nav navbar-left">
-                <li>
-                    <a href="#">
-                        <i class="fa fa-facebook fa-lg" style="line-height: 1em"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" >
-                        <i class="fa fa-instagram fa-lg" style="line-height: 1em"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-google fa-lg" style="line-height: 1em"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-pinterest fa-lg" style="line-height: 1em"></i>
-                    </a>
-                </li>
-                <li>&nbsp;</li>
-            </ul>
+            
 
-            <?php if ($isLoggedIn): ?>
-                <ul class="nav navbar-nav navbar-right">
+            
+            <div class="nav navbar-nav navbar-right col-sm-2 col-md-2">
+                <table style="width:100%;">
+                    
+                    <!-- <tr>
+                        <td>
+                            <form class="navbar-form" role="search">
+                                <div class="input-group">
+                                  <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon2">
+                                  <span class="input-group-addon" id="basic-addon2">
+                                      <i class="glyphicon glyphicon-search"></i>
+                                  </span>
+                                </div>
+                            </form>
+                        </td>
+                    </tr> -->
+                     <?php if ($isLoggedIn): ?>
+                        <tr>
+                            <td colspan="2">
+                                 <a href="<?= base_url(); ?>follower/<?= $loggedInFollower->username; ?>">
+                                    <i class="fa fa-user"></i>
+                                     <?= strtoupper($loggedInFollower->username); ?>
+                                </a>
+                            </td>
+                             <td><a href="<?= base_url();?>logout">Log Out</a></td>
+                        </tr>
+                        <!-- <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="javascript:void(0);">
-                             <?= $loggedInFollower->username; ?>
+                            <i class="fa fa-user fa-lg"></i>
+                             <?= ucfirst($loggedInFollower->username); ?>
                              <span class="caret"></span>
                         </a>
                         <ul class="fallback userdropdown">
@@ -111,23 +105,46 @@
                             <li><a href="<?= base_url();?>logout">Log Out</a></li>
                         </ul>
                     </li>
-                </ul>
-            <?php else: ?>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#" data-toggle="modal" data-target="#registerModal">
-                            <i class="fa fa-user-plus fa-lg"></i>
-                            Sign Up
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" data-toggle="modal" data-target="#loginModal">
-                            <i class="fa fa-sign-in fa-lg"></i>
-                            Log In
-                        </a>
-                    </li>
-                </ul>
-            <?php endif ?>
+                </ul> -->
+                     <?php else: ?>
+                         <tr>
+                            <td width="50%"><a href="javascript:void(0);" data-toggle="modal" data-target="#registerModal">
+                                <i class="fa fa-user-plus fa-lg"></i>
+                                Sign Up
+                            </a></td>
+                            <td width="50%"><a href="javascript:void(0);" data-toggle="modal" data-target="#loginModal">
+                                <i class="fa fa-sign-in fa-lg"></i>
+                                Log In
+                            </a></td>
+                        </tr>
+                    <?php endif ?>
+                   
+                    <tr width="100%">
+                       <td colspan="2">
+                           <a class="social" href=""><i class="fa fa-facebook fa-lg"></i></a>
+                           <a class="social" href=""><i class="fa fa-instagram fa-lg"></i></a>
+                           <a class="social" href=""><i class="fa fa-google fa-lg"></i></a>
+                           <a class="social" href=""><i class="fa fa-pinterest fa-lg"></i></a>
+                       </td>
+                    </tr>
+                    
+                </table>
+            </div>
+
+
+             <div class="nav navbar-nav navbar-right col-sm-2 col-md-2">
+            <form class="navbar-form" role="search">
+                <div class="input-group">
+                  <input type="text" class="form-control header_input" placeholder="Search" aria-describedby="basic-addon2">
+                  <span class="input-group-addon" id="basic-addon2">
+                      <i class="glyphicon glyphicon-search"></i>
+                  </span>
+                </div>
+            </form>
+            </div>
+
+         
+            
             
             
         </div>

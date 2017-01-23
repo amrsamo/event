@@ -212,6 +212,7 @@ class Follower extends Base_Model
         $this->db->join('user_type', 'user.type = user_type.id','inner');
         $this->db->where('follower_user.follower_id',$follower_id);
         $this->db->order_by("media.creation_date", "desc");
+        $this->db->limit(10);
         $query = $this->db->get();
 
         return ($query->result());
