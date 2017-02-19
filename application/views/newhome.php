@@ -3,9 +3,8 @@
 
 <input type="hidden" id="homepage" value="1">
 <section class="container-fluid" id="landing" style="background-color: rgba(0,0,0,0.3);">
-    <div class="v-center landing_content">
-        <h1 class="text-center">Your Personal Event Planner</h1>
-        <h2 class="text-center lato animate slideInDown">You Know Best How To Plan</h2>
+    <div class="v-center landing_content" style="margin-top: 27%;">
+        <h1 class="text-center">You Know Best How To Plan</h1>
         <p class="text-center">
             <br>
             <div class="col-sm-12 text-center">
@@ -20,13 +19,13 @@
             </div>
         </p>
     </div>
-    <a href="#categories">
+    <!-- <a href="#categories">
         <div class="scroll-down bounceInDown animated">
             <span>
                 <i class="fa fa-angle-down fa-2x"></i>
             </span>
         </div>
-    </a>
+    </a> -->
 </section>
 
 

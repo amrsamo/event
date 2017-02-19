@@ -15,41 +15,49 @@ $(".wide-container").css('height',$(".navbar").height()+"px");
 var window_width = $(window).width();
 var check = true;
 
+var logo_original_height = $(".brand-div img").height();
+var logo_original_width = $(".brand-div img").width();
+
+
 $(window).load(function(){
-  if( !$("#homepage").length)
+
+
+  if( $("#homepage").length)
   {
-    adjustLogoWidth(7,0,0);
-    check = false;
-  }
-  else
-  {
-    var scrollTop = $(window).scrollTop();
-    if(scrollTop > 0)
+    var scroll = $(window).scrollTop();
+    if(scroll == 0)
     {
-       adjustLogoWidth(7,0,0);
-       check = false;
+      $(".navbar-collapse").css('margin-top','2%');
+      $(".navbar-collapse").css('background','transparent');
+      $(".brand-div a").css('background','transparent');
+
+      var brand_height = $(".brand-div img").height();
+      var navbar_height = $(".navbar-collapse").height();
+      var margin_top_value = ((brand_height/2) - navbar_height) + 'px';
+      $(".navbar-left").css('margin-top',margin_top_value);
+      $(".navbar-right").css('margin-top',margin_top_value);
     }
     else
     {
-      adjustLogoWidth(25,0,80);
+      $(".brand-div img").css('height',$(".navbar-left").height()+'px');
+      $(".brand-div img").css('width',$(".navbar-left").height()+'px');
     }
+
   }
+  else
+  {
+    $(".brand-div").css('height',$('.navbar-left').height()+'px');
+    $(".navbar-right").css('height',$(".navbar-left").height()+'px');
+    $(".navbar-left").removeClass('hide');
+    $(".navbar-right").removeClass('hide');
+    $(".brand-div img").css('height',$(".navbar-left").height()+'px');
+    $(".brand-div img").css('width',$(".navbar-left").height()+'px');
+  }
+    
 
+    
   
   
-});
-
-$(window).resize(function(){
-  window_width = $(window).width();
-  // if(scrollTop > 0)
-  //   {
-  //      adjustLogoWidth(7,0,-15);
-  //      check = false;
-  //   }
-  //   else
-  //   {
-  //     adjustLogoWidth(25,0,80);
-  //   }
 });
 
 
@@ -62,13 +70,29 @@ $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
     if(scroll == 0)
     {
-      adjustLogoWidth(25,250,80);
+      var brand_height = logo_original_height;
+      var navbar_height = $(".navbar-collapse").height();
+      var margin_top_value = ((brand_height/2) - navbar_height) + 'px';
+
+      $(".navbar-left").css('margin-top',margin_top_value);
+      $(".navbar-right").css('margin-top',margin_top_value);
+      $(".navbar-collapse").css('background','transparent');
+      $(".brand-div a").css('background','transparent');
+      $(".navbar-collapse").css('margin-top','2%');
+      $(".brand-div img").css('height',logo_original_height+'px');
+      $(".brand-div img").css('width',logo_original_width+'px');
       check = true;
     }
     
     if(scroll != 0 && check)
     {
-      adjustLogoWidth(7,250,0);
+      $(".navbar-left").css('margin-top','0px');
+      $(".navbar-right").css('margin-top','0px');
+      $(".navbar-collapse").css('background','black');
+      $(".brand-div a").css('background','black');
+      $(".navbar-collapse").css('margin-top','0px');
+      $(".brand-div img").css('height',$(".navbar-left").height()+'px');
+      $(".brand-div img").css('width',$(".navbar-left").height()+'px');
       check = false;
     }
 
@@ -103,7 +127,7 @@ function adjustLogoWidth(x,time,top)
   $( ".brand" ).animate({
     width: window_20percert+'px',
     height: window_20percert+'px',
-    left : left+'px',
+    left : '0px',
     top : top+'px'
   }, time, function() {
      $(".brand img").attr('src',imageSrc);

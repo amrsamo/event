@@ -1,7 +1,20 @@
 <?php include('newheader.php'); ?>
 
-<section class="container" id="section1" style="min-height: 65%;">
-    <div class="col-sm-12 container">
+
+<style type="text/css">
+  body{
+    background-image: url('../public/images/bg.png') !important;
+    background-size: 10%;
+    background-repeat: repeat;
+    height:100%;
+  }
+  section{
+    padding-bottom:0px;
+  }
+</style>
+<section class="container-fluid" id="section1" style="min-height: 65%;background-image: url('../public/media/wallpapers/22.jpg');background-position: 0%;background-size: 100%; ">
+    
+    <div class="col-sm-10 col-sm-offset-1 user-container" style="padding-top:1%;background-color:rgba(0, 0, 0, 0.8);">
         
         <div class="row">
           <div class="col-sm-12">
@@ -95,14 +108,15 @@
 
           </div>
         </div>
-    </div>
-      <a href="#section2">
+        <a href="#section2">
         <div class="scroll-down bounceInDown animated">
             <span>
                 <i class="fa fa-angle-down fa-2x"></i>
             </span>
         </div>
       </a>
+    </div>
+      
 </section>
 
 <div class="container content" id="section2">
@@ -151,9 +165,7 @@
 
   </div>
 
-
 </div>
-
 
 
 
@@ -176,4 +188,8 @@
       });
 
     });
+
+    var height = $(".container-fluid").height();
+    height += 120;
+    $(".user-container").css('height',height+'px');
 </script>

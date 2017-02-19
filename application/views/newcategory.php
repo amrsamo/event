@@ -7,7 +7,7 @@
     <div class="">
         <h1 class="text-center"><?= $category_name; ?></h1>
         <h2 class="text-center lato animate slideInDown" style="width:90%;margin:0 auto;">
-          <small style="line-height: 1.3"><?= $category->description; ?></small>
+          <small style="line-height: 1.3;color:white;"><?= $category->description; ?></small>
         </h2>
     </div>
     <a href="#section2">

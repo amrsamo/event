@@ -276,7 +276,8 @@ class User extends CI_Controller {
 
 
 	public function media($username)
-	{
+	{	
+		$username = urldecode($username);
 		$user = $this->Adminuser->get(array("username"=>$username));
 		$user = $user[0];
 		$data = array();
