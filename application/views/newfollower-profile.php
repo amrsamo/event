@@ -1,153 +1,123 @@
 <?php include('newheader.php'); ?>
 
-<section class="container" id="follower_section" style="min-height: 60%;">
-    <div class="col-sm-12 container">
-        
-        <div class="row">
-          <div class="col-sm-12">
 
-            <div class="row">
-              <div class="col-sm-2">
-                  <img class="img-responsive img-circle" style="height:150px;width:150px;" src="<?= base_url();?>public/images/usernotfound.jpg" >
-                </div>
-                <div class="col-sm-10 user-info">
-                  <div class="row">
-                    <h3 class="bold" style="margin-top: 0px;">
-                      <span class="user-headline"><?= $follower->username; ?></span>
-                    </h3>
-                  </div>
-                </div>
-            </div>
-
-            <div class="row user-info">
-
-              <!-- CONTACT SECTION -->
-              <div class="user-info col-sm-3 col-sm-offset-2">
-                <h2 style="margin-top: 0px;"><small>Contact</small></h2>
-                  <div class="col-sm-12">
-                     <div class="row bounceInDown animated">
-                       <div class="col-sm-1 nopadding">
-                         <span><i class="fa fa-user" aria-hidden="true"></i></span>
-                       </div>
-                       <div class="col-sm-11 nopadding">
-                         <span><?= $follower->first_name.' '.$follower->last_name; ?></span>
-                       </div>
-                     </div>
-                     <div class="row bounceInDown animated">
-                       <div class="col-sm-1 nopadding">
-                         <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                       </div>
-                       <div class="col-sm-11 nopadding">
-                         <span><?= $follower->email; ?></span>
-                       </div>
-                     </div>
-                     <div class="row bounceInDown animated">
-                       <div class="col-sm-1 nopadding">
-                         <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                       </div>
-                       <div class="col-sm-11 nopadding">
-                         <span><?= $follower->city_name.', '.$follower->country_name; ?></span>
-                       </div>
-                     </div>
-                  </div>
-              </div>
-
-              <!-- FOLLOWING SECTION -->
-              <div class="user-info col-sm-2">
-                <h2 class="text-center" style="margin-top: 0px;"><small>Following</small></h2>
-                  <h3 class="text-center bounceInDown animated"><?= count($following); ?></h3>
-              </div>
-
-               <!-- LIKES SECTION -->
-              <div class="user-info col-sm-2">
-                <h2 class="text-center" style="margin-top: 0px;"><small>Likes</small></h2>
-                  <h3 class="text-center bounceInDown animated"><?= count($likes); ?></h3>
-              </div>
-
-
-            </div>
+<style type="text/css">
+  body{
+    background-image:url('<?= base_url(); ?>public/images/bg.png');
+    background-size: 10%;
+  }
+</style>
 
 
 
-          </div>
+<div class="col-sm-10 col-sm-offset-1 user_profile">
+    
+    <div class="row nospace">
+        <div class="col-sm-2 nospace">
+          <img class="img-responsive img-circle" src="<?= base_url().$user->profile_picture->source_url; ?>" >
+        </div>
+        <div class="user_title col-sm-10">
+          <h2><?= $follower->username; ?></h2>
+          <span><?= $follower->first_name.' '.$follower->last_name; ?></span>
+          <span class="pull-right"><?= $follower->city_name.', '.$follower->country_name; ?></span>
         </div>
     </div>
-      <a href="#section2">
-        <div class="scroll-down bounceInDown animated">
-            <span>
-                <i class="fa fa-angle-down fa-2x"></i>
-            </span>
-        </div>
-      </a>
-</section>
 
-<div class="container content" id="section2">
 
-  <!-- SEARCH FILTERS -->
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="col-sm-8">
-        <div class="col-sm-1 nopadding nomargin">
-          <p>Filter By : </p>
-        </div>
-        <div class="col-sm-2">
-          <div class="form-group">
-            <label class="checkbox-inline"><input type="checkbox" value="">Newest</label>
+    <div class="row nospace">
+      <div class="col-sm-8 col-sm-offset-2 user_info">
+        <div class="col-sm-10 bio_section">
+          <div class="col-sm-6">
+            <h2>FOLLOWING</h2>
+            <p>count($following);</p>
           </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="form-group">
-            <label class="checkbox-inline"><input type="checkbox" value="">Top Rated</label>
+          <div class="col-sm-6">
+            <h2>LIKES</h2>
+            <p>count($likes);</p>
           </div>
-        </div>
-      </div>
-      <div class="col-sm-4 pull-right">
-        <form role="search">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search User Media" aria-describedby="basic-addon2">
-            <span class="input-group-addon" id="basic-addon2">
-                <i class="glyphicon glyphicon-search"></i>
-            </span>
+
+          <div class="col-sm-6">
+            <h2>EMAIL</h2>
+            <p><?= $follower->email; ?></p>
           </div>
-        </form>
+          <div class="col-sm-6">
+            <h2>ADDRESS</h2>
+            <p><?= $follower->address; ?></p>
+          </div>
+          <?php exit(); ?>
+        </div>
+        <div class="col-sm-2 contacts_section">
+          <?php if (isset($social)): ?>
+            <?php foreach ($social as $x): ?>
+              <div class="col-sm-12 nospace">
+                <a href="<?= $x->link; ?>">
+                  <img class="img-responsive"  src="<?= base_url(); ?>public/images/landing/<?= $x->image; ?>">
+                </a>
+              </div>
+            <?php endforeach ?>
+          <?php endif ?>
+        </div>
       </div>
     </div>
+</div>
+
+
+<div class="category_filters col-sm-10 col-sm-offset-1">
+  <div class="col-sm-1">
+    <span>all</span>
   </div>
+  <div class="col-sm-1">
+    <img src="<?= base_url(); ?>public/images/wishbone_crop.png" height="20" width="20">
+  </div>
+  <div class="col-sm-1 col-sm-offset-1">
+            <span>Albums</span>
+  </div>
+ <div class="col-sm-2 pull-right" style="margin-right: 3%;">
+     <div class="search">
+        <input type="text" class="btn_header" placeholder="search media">
+        <span class="line"></span>
+        <span class="circle"></span>
+      </div>
+  </div>
+</div>
 
 
 
+<div class="category_users col-sm-10 col-sm-offset-1 categoryajaxcontent">
 
+<div class="row myspacer user-media">
+  <?php foreach ($media as $x): ?>
 
-    <div class="row myspacer user-media">
-    <?php foreach ($feed as $x): ?>
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 one-media-div spacer-down">
-      <?php 
-            $user = new stdClass(); 
-            $user->username = $x->username; 
-            $follower = true;
-            $user->profile_picture = new stdClass();
-            $user->profile_picture->source_url = $x->user_source_url;
-            $x->id = $x->media_id;
-      ?>
-      <?php include('media-item.php'); ?>
-    </div>
+      <div class="col-sm-4 single_media_div nospace">
+        <a class="mediaModal" id="<?= $x->id;?>" href="<?= base_url().$x->source_url; ?>" data-title="A random title" data-footer="A custom footer text" data-gallery="example-gallery" >
+                <img data-toggle="modal" data-target="#user_media_<?= $x->id;?>" class="img-responsive" src="<?= base_url().$x->source_url; ?>">
+        </a>
+        <div class="single_media_div_info">
+          <?php if ($x->like): ?>
+              <div value="<?= $x->id; ?>" id="<?= $x->id; ?>" class="heart_div like unlikeBTN">
+                <p><?= $x->statistics->likes; ?></p>
+              </div>
+          <?php else: ?>
+              <div value="<?= $x->id; ?>" id="<?= $x->id; ?>" class="heart_div unlike likeBTN">
+                <p><?= $x->statistics->likes; ?></p>
+              </div>
+          <?php endif ?> 
+        </div>
+      </div>
+      <?php include('image_modal.php'); ?>
     <?php endforeach ?>
-
-  </div>
+</div>
 
 
 </div>
 
 
+ 
+<div class="clearfix"></div>
 
 
 
 
-
-
-
-<!--  -->
-<!--  -->
 
 
 <?php include('newfooter.php'); ?>
@@ -156,8 +126,12 @@
   
     $container.imagesLoaded( function(){
       $container.masonry({
-        itemSelector : '.one-media-div'
+        itemSelector : '.single_media_div'
       });
 
     });
+
+    var height = $(".container-fluid").height();
+    height += 120;
+    $(".user-container").css('height',height+'px');
 </script>

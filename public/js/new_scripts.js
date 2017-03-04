@@ -21,66 +21,113 @@ var logo_original_width = $(".brand-div img").width();
 
 $(window).load(function(){
 
-
-  if( $("#homepage").length)
-  {
+  // if( $("#homepage").length)
+  // {
     var scroll = $(window).scrollTop();
     if(scroll == 0)
     {
-      $(".navbar-collapse").css('margin-top','2%');
+      $(".navbar-collapse").css('margin-top','5px');
       $(".navbar-collapse").css('background','transparent');
       $(".brand-div a").css('background','transparent');
 
       var brand_height = $(".brand-div img").height();
       var navbar_height = $(".navbar-collapse").height();
-      var margin_top_value = ((brand_height/2) - navbar_height) + 'px';
+      var margin_top_value = ((brand_height/1.6) - navbar_height) + 'px';
       $(".navbar-left").css('margin-top',margin_top_value);
-      $(".navbar-right").css('margin-top',margin_top_value);
+      // $(".navbar-right").css('margin-top',margin_top_value);
     }
     else
     {
-      $(".brand-div img").css('height',$(".navbar-left").height()+'px');
-      $(".brand-div img").css('width',$(".navbar-left").height()+'px');
+      $(".navbar-left").css('margin-top','0px');
+      $(".navbar-right").css('margin-top','0px');
+      $(".navbar-collapse").css('background','black');
+      $(".brand-div a").css('background','black');
+      $(".navbar-collapse").css('margin-top','0px');
+      $(".brand-div img").css('height','75px');
+      $(".brand-div img").css('width','75px');
+      // $(".arrow").hide();
     }
 
-  }
-  else
-  {
-    $(".brand-div").css('height',$('.navbar-left').height()+'px');
-    $(".navbar-right").css('height',$(".navbar-left").height()+'px');
-    $(".navbar-left").removeClass('hide');
-    $(".navbar-right").removeClass('hide');
-    $(".brand-div img").css('height',$(".navbar-left").height()+'px');
-    $(".brand-div img").css('width',$(".navbar-left").height()+'px');
-  }
+  // }
+  // else
+  // {
+  //   $(".brand-div").css('height',$('.navbar-left').height()+'px');
+  //   $(".navbar-right").css('height',$(".navbar-left").height()+'px');
+  //   $(".navbar-left").removeClass('hide');
+  //   $(".brand-div img").css('height',$(".navbar-left").height()+'px');
+  //   $(".brand-div img").css('width',$(".navbar-left").height()+'px');
+  // }
     
 
-    
+  $(".navbar").css('visibility','visible');
+  // style="visibility: hidden"
+
   
-  
+
+  $(".categories_header_link").hover(function(){
+
+    $('.sub_category').slideDown('fast');
+
+  });
+
+
+
+
+  $(".sub_category").mouseleave(function(){
+
+    $('.sub_category').slideUp('fast');
+
+  });
+
+  $(".header_link_div a").click(function(){
+    $(this).css('text-decoration','none');
+  });
+
+
+
+  $(".category_filters span").click(function(){
+    $(".category_filters span").each(function(){
+      $(this).removeClass('active');
+    });
+    $(this).addClass('active');
+  });
+
+
+ 
+
+
+    $('.bxslider').bxSlider({
+      minSlides: 3,
+      maxSlides: 3,
+      slideWidth: 360,
+      slideMargin: 10,
+      adaptiveHeight:false
+    });
+
+
 });
 
 
 
 $(window).scroll(function (event) {
 
-    if( !$("#homepage").length)
-      return;
+    
 
     var scroll = $(window).scrollTop();
     if(scroll == 0)
     {
       var brand_height = logo_original_height;
       var navbar_height = $(".navbar-collapse").height();
-      var margin_top_value = ((brand_height/2) - navbar_height) + 'px';
+      var margin_top_value = ((brand_height/1.6) - navbar_height) + 'px';
 
       $(".navbar-left").css('margin-top',margin_top_value);
       $(".navbar-right").css('margin-top',margin_top_value);
       $(".navbar-collapse").css('background','transparent');
       $(".brand-div a").css('background','transparent');
-      $(".navbar-collapse").css('margin-top','2%');
+      $(".navbar-collapse").css('margin-top','5px');
       $(".brand-div img").css('height',logo_original_height+'px');
       $(".brand-div img").css('width',logo_original_width+'px');
+      $(".arrow").show();
       check = true;
     }
     
@@ -91,8 +138,13 @@ $(window).scroll(function (event) {
       $(".navbar-collapse").css('background','black');
       $(".brand-div a").css('background','black');
       $(".navbar-collapse").css('margin-top','0px');
-      $(".brand-div img").css('height',$(".navbar-left").height()+'px');
-      $(".brand-div img").css('width',$(".navbar-left").height()+'px');
+      $(".brand-div img").css('height','75px');
+      $(".brand-div img").css('width','75px');
+      // $(".arrow").hide();
+      // $("#arrow_left").css('height','38%');
+      // $("#arrow_left").css('top','61.8%');
+      // $("#arrow_right").css('height','38%');
+      // $("#arrow_right").css('top','61.8%');
       check = false;
     }
 

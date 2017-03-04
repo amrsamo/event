@@ -28,8 +28,16 @@ class Home extends CI_Controller {
 	{
 		
 		$categories = $this->Category->get();
-		$this->data['categories'] = $categories;
 
+		$this->data['categories'] = array();
+
+		foreach ($categories as $category) {
+			$sub_category = $this->Category->getCategoryInfo($category->id);
+			$output = new stdClass();
+			$output->category = $category;
+			$output->sub = $sub_category;
+			$this->data['categories'][] = $output;
+		}
 		// printme($this->data);
 		// exit();
 		$this->load->view('newhome',$this->data);
@@ -48,6 +56,9 @@ class Home extends CI_Controller {
 
 		$category = $this->Category->get(array('name'=>$name));
 		$category = $category[0];
+
+		$this->data['category'] = $category;
+		
 		$sub_category = $this->Category->getCategoryInfo($category->id);
 
 		if(!empty($sub_category))
@@ -55,6 +66,8 @@ class Home extends CI_Controller {
 			$this->data['sub_category'] = $sub_category;
 		}
 		
+
+
 		// GET USERS UNDER CATEGORY
 		$getCategoryTypes = $this->Usertype->get(array('category'=> $category->id));
 		$categoryTypesArray = array();
@@ -63,8 +76,12 @@ class Home extends CI_Controller {
 			
 		}
 		
+		// printme($category);
+		// printme($getCategoryTypes);
 		$users = $this->Adminuser->getUsersByType(null,$categoryTypesArray,9);
 
+		// printme($users);
+		// exit();
 		$this->data['users'] = array();
 
 		//GET USER INFO AND  PROFILE PICS
@@ -77,7 +94,7 @@ class Home extends CI_Controller {
 			}
 
 			//Get User media
-			$media = $this->Media->get(array('user_id'=> $user->user_id),null,4);
+			$media = $this->Media->get(array('user_id'=> $user->user_id),null,8);
 			$user->media = $media;
 
 
@@ -97,10 +114,22 @@ class Home extends CI_Controller {
 			$this->data['users'][] = $user;
 		}
 		$this->data['min_id'] = $this->data['users'][count($this->data['users'])-1]->user_id;
-		$categories = $this->Category->get();
-		$this->data['categories'] = $categories;
+		
+		// $categories = $this->Category->get();
+		// $this->data['categories'] = $categories;
 
-		$this->data['category'] = $category;
+		$this->data['categories'] = array();
+		$categories = $this->Category->get();
+		foreach ($categories as $category) {
+			$sub_category = $this->Category->getCategoryInfo($category->id);
+			$output = new stdClass();
+			$output->category = $category;
+			$output->sub = $sub_category;
+			$this->data['categories'][] = $output;
+		}
+
+		
+		// printme($this->data['category']);exit();
 		// printme($this->data);exit();
 		$this->load->view('newcategory',$this->data);
 	}
@@ -132,7 +161,7 @@ class Home extends CI_Controller {
 			}
 
 			//Get User media
-			$media = $this->Media->get(array('user_id'=> $user->user_id),null,4);
+			$media = $this->Media->get(array('user_id'=> $user->user_id),null,8);
 			$user->media = $media;
 
 
@@ -192,7 +221,6 @@ class Home extends CI_Controller {
 		
 		$this->data['user'] = $user;
 
-
 		//GET USER MEDIA
 		$this->data['media'] = $this->Media->get(array('user_id'=> $this->data['user']->user_id));
 
@@ -243,6 +271,20 @@ class Home extends CI_Controller {
 		//GET USER CONTACTS
 		$this->data['social'] = $this->Adminuser->getSocial(array('user_id'=> $this->data['user']->user_id));
 
+
+
+		$this->data['categories'] = array();
+		$categories = $this->Category->get();
+		foreach ($categories as $category) {
+			$sub_category = $this->Category->getCategoryInfo($category->id);
+			$output = new stdClass();
+			$output->category = $category;
+			$output->sub = $sub_category;
+			$this->data['categories'][] = $output;
+		}
+
+		$this->data['category'] = $category;
+		
 		// printme($this->data);
 		// exit();
 

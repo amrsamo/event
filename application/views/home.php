@@ -28,7 +28,7 @@
       <img style="width:200px;height:200px;" src="<?= base_url() ?>public/personal_template/images/logo circle green.png" class="img-circle profile">
     </div>
     <div class="col-sm-6 col-sm-offset-3">
-      <h2 class="banner_header">Your Personal Event Planner</h2>
+      <h2 class="banner_header">YOU KNOW BEST HOW TO PLAN</h2>
     </div>
   </div>
 </div>

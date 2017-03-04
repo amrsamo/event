@@ -13,10 +13,10 @@
 
     <link rel="stylesheet" href="<?= base_url() ?>public/css/bootstrap.min.css" />
     <link href="<?= base_url() ?>public/css/font-awesome.min.css" rel="stylesheet" />
-    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet" /> -->
-    <!-- <link rel="stylesheet" href="<?= base_url() ?>public/public/personal_template/assets/animate/animate.css" /> -->
-    <link rel="stylesheet" href="<?= base_url() ?>public/personal_template/assets/animate/set.css" />
+    <link rel="stylesheet" href="<?= base_url() ?>public/public/css/animate.min.css" />
+    <!-- <link rel="stylesheet" href="<?= base_url() ?>public/personal_template/assets/animate/set.css" /> -->
     <link rel="stylesheet" href="<?= base_url(); ?>public/css/new_styles.css" />
+    <link rel="stylesheet" href="<?= base_url(); ?>public/css/jquery.bxslider.css" />
   </head>
   <body >
     <?php if ($isLoggedIn): ?>
@@ -27,7 +27,7 @@
 <input type="hidden" id="base_url" value="<?= base_url(); ?>">  
 
   
-    <nav class="navbar navbar-trans navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-trans navbar-fixed-top" role="navigation" style="visibility: hidden">
     <div class="wide-container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
@@ -40,23 +40,31 @@
         </div>
         <div class="navbar-collapse collapse" id="navbar-collapsible" >
             <div class="col-sm-5 nospace nav navbar-nav navbar-left nospace">
-                <ul class="">
-                    <li><a href="#landing">Home</a></li>
-                    <li><a href="#categories">Categories</a>
-                        <ul class="fallback hidden-xs">
+                <div class="left_header_content" style="height:50px;background-color:black !important;color: white;">
+                    <div class="header_link_div header_hover col-sm-3 text-center">
+                        <a href="#landing">Home</a>
+                    </div>
+                    <div class="header_link_div categories_header_link col-sm-3 text-center">
+                        <a href="#categories">Categories</a>
+                    </div>
+                    <div class="sub_category col-sm-12">
                             <?php foreach ($categories as $x): ?>
-                                <li><a href="<?= base_url().'category/'.rawurlencode($x->name); ?>">
-                                    <?= ($x->name); ?>
-                                </a></li>
+                                <div class="col-sm-12 nospace">
+                                    <a href="<?= base_url().'category/'.rawurlencode($x->category->name); ?>">
+                                        <?= ($x->category->name); ?>
+                                    </a>
+                                </div>
                             <?php endforeach ?>
-                        </ul>
-                    </li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#section5">Trending</a></li>
-                    <li>&nbsp;</li>
-                </ul>
+                        </div>
+                    <div class="header_link_div header_hover col-sm-3 text-center">
+                        <a href="#trending">Trending</a>
+                    </div>
+                    <div class=" header_link_div header_hover col-sm-2 text-center">
+                        <a href="#about">About</a>
+                    </div>
+                </div>
             </div>
+            <div id="arrow_left"></div>
             <div class="brand-div col-sm-2 nospace">
                 <a class="navbar-brand brand" href="#section1" style="padding-top: 0px;">
                     <img class="img-responsive" src="<?= base_url(); ?>public/images/logo circle green.png">
@@ -64,35 +72,50 @@
             </div>
             
 
-            
-            <div class="nav navbar-nav navbar-right col-sm-5" style="padding:0px;margin:0px;">
+            <div id="arrow_right"></div>
+            <div class="col-sm-5 nospace nav navbar-nav navbar-left nospace">
                 <?php if ($isLoggedIn): ?>
-                    <ul class="nav navbar-nav pull-right col-sm-5">
-                    <li>
-                        <a href="<?= base_url(); ?>follower/<?= $loggedInFollower->username; ?>">
-                                    <i class="fa fa-user"></i>
-                                     <?= strtoupper($loggedInFollower->username); ?>
-                                </a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url();?>logout">Log Out</a>
-                    </li>
-                    </ul>
+                    <div class="left_header_content" style="height:50px;background-color:black !important;color: white;">
+                        <div class="header_link_div header_hover col-sm-3 text-center">
+                            <a href="#contact">Contact</a>
+                        </div>
+                        <div class="header_link_div col-sm-2 text-center nospace" style="margin-top: 1.5%;">
+                            <a href="<?= base_url(); ?>follower/<?= $loggedInFollower->username; ?>">
+                                <button class=" btn_header" >Profile</button>
+                            </a>
+                        </div>
+                        <div class="header_link_div col-sm-2 text-center nospace" style="margin-top: 1.5%;">
+                            <a href="<?= base_url(); ?>logout">
+                                <button class=" btn_header" >Logout</button>
+                            </a>
+                        </div>
+                        <div class="header_link_div col-sm-2 text-center nospace" style="margin-top: 1.5%;">
+                            <div class="search">
+                              <input type="text" class="btn_header" placeholder="search..">
+                              <span class="line"></span>
+                              <span class="circle"></span>
+                            </div>
+                        </div>
+                    </div>
                 <?php else: ?>
-                    <ul class="nav navbar-nav pull-right col-sm-5">
-                    <li>
-                        <a href="javascript:void(0);" data-toggle="modal" data-target="#registerModal">
-                                <i class="fa fa-user-plus fa-lg"></i>
-                                Sign Up
-                            </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" data-toggle="modal" data-target="#loginModal">
-                                <i class="fa fa-sign-in fa-lg"></i>
-                                Log In
-                            </a>
-                    </li>
-                    </ul>
+                    <div class="left_header_content" style="height:50px;background-color:black !important;color: white;">
+                        <div class="header_link_div header_hover col-sm-3 text-center">
+                            <a href="#contact">Contact</a>
+                        </div>
+                        <div class="header_link_div col-sm-2 text-center nospace" style="margin-top: 1.5%;">
+                            <button data-toggle="modal" data-target="#loginModal" class=" btn_header" >login</button>
+                        </div>
+                        <div class="header_link_div col-sm-2 text-center nospace" style="margin-top: 1.5%;">
+                            <button data-toggle="modal" data-target="#signUpPopUp" class=" btn_header" >sign up</button>
+                        </div>
+                        <div class="header_link_div col-sm-2 text-center nospace" style="margin-top: 1.5%;">
+                            <div class="search">
+                              <input type="text" class="btn_header" placeholder="search..">
+                              <span class="line"></span>
+                              <span class="circle"></span>
+                            </div>
+                        </div>
+                    </div>
                 <?php endif ?>
                   
             </div>

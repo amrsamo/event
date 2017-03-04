@@ -20,6 +20,16 @@ class Signup extends CI_Controller {
 			$this->isLoggedIn = false;
 			$this->data['isLoggedIn'] = false;
 		}
+
+		$this->data['categories'] = array();
+		$categories = $this->Category->get();
+		foreach ($categories as $category) {
+			$sub_category = $this->Category->getCategoryInfo($category->id);
+			$output = new stdClass();
+			$output->category = $category;
+			$output->sub = $sub_category;
+			$this->data['categories'][] = $output;
+		}
 	}
 
 

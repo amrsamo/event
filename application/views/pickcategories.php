@@ -14,7 +14,7 @@
 }
 </style>
 
-<section class="container" id="signup">
+<section class="container" id="signup" style="padding-top: 10%;">
 
 
 <div class="row">

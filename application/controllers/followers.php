@@ -25,6 +25,16 @@ class followers extends CI_Controller {
 
 		$categories = $this->Category->get();
 		$this->data['categories'] = $categories;
+		$this->data['categories'] = array();
+		$categories = $this->Category->get();
+		foreach ($categories as $category) {
+			$sub_category = $this->Category->getCategoryInfo($category->id);
+			$output = new stdClass();
+			$output->category = $category;
+			$output->sub = $sub_category;
+			$this->data['categories'][] = $output;
+		}
+
 	}
 
 	public function profile()

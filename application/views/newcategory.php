@@ -1,92 +1,80 @@
 <?php include('newheader.php'); ?>
 
+<style type="text/css">
+  body{
+    background-image:url('<?= base_url(); ?>public/images/bg.png');
+    background-size: 10%;
+  }
+</style>
 
 
-
-<section class="" id="section1" style="min-height: 50%;">
-    <div class="">
+<div class="col-sm-10 col-sm-offset-1" id="section1" style="background-image: url('<?= base_url().$category->image_url ?>');background-size: cover;margin-top:6.6%;padding-top: 10%;padding-bottom: 10%;padding-left:0px;padding-right:0px;">
+    
+    <div class="category_desc nospace">
         <h1 class="text-center"><?= $category_name; ?></h1>
         <h2 class="text-center lato animate slideInDown" style="width:90%;margin:0 auto;">
           <small style="line-height: 1.3;color:white;"><?= $category->description; ?></small>
         </h2>
     </div>
-    <a href="#section2">
-        <div class="scroll-down bounceInDown animated">
-            <span>
-                <i class="fa fa-angle-down fa-2x"></i>
-            </span>
-        </div>
-    </a>
-</section>
+</div>
 
-<div class="container-nofull" id="section2">
-    <div class="newbanner text-center">
-      <h2 style="font-size: 200%;text-align: center;">
-        CHECK OUT THE BEST
-      </h2>
-    </div>
-<div class="bannerspacer"></div>
-   <div class="category_content" style="padding-top: 2%;">
-     <div class="row">
-    <div class="col-sm-8 col-xs-12">
-      <div class="col-sm-2 col-xs-2">
-        <div class="form-group">
-          <label class="checkbox-inline"><input type="checkbox" value="">Newest</label>
-        </div>
-      </div>
-      <div class="col-sm-2 col-xs-2">
-        <div class="form-group">
-          <label class="checkbox-inline"><input type="checkbox" value="">Top Rated</label>
-        </div>
-      </div>
-         <?php if (isset($sub_category) && !empty($sub_category)): ?>
-                <?php foreach ($sub_category as $sub): ?>
-                  <div class="col-sm-2 col-xs-2">
-                      <div class="form-group">
-                      <label class="checkbox-inline"><input type="checkbox" value="">
-                      <i class="fa fa-<?= $sub->icon; ?>" aria-hidden="true"></i>
-                      <?= $sub->name; ?>
-                      </label>
-                    </div>
-                  </div>
-                <?php endforeach ?>
-         <?php endif ?>
-    </div>
-    <div class="col-sm-4 col-xs-12 ">
-      <div class="col-xs-9 col-sm-8 pull-right">
-         <form class="navbar-form" role="search">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon2">
-            <span class="input-group-addon" id="basic-addon2">
-                <i class="glyphicon glyphicon-search"></i>
-            </span>
-          </div>
-        </form>
-      </div>
-    </div>
+<div class="category_filters col-sm-10 col-sm-offset-1">
+  <div class="col-sm-1">
+    <span>all</span>
+    <img style="margin-left:25%" src="<?= base_url(); ?>public/images/wishbone_crop.png" height="20" width="20">
   </div>
+  <?php if (isset($sub_category) && !empty($sub_category)): ?>
+        <?php if (count($sub_category) > 4): ?>
+          <?php foreach ($sub_category as $sub): ?>
+            <div class="col-sm-2 fivesub">
+              <span><?= $sub->name; ?></span>
+            </div>
+          <?php endforeach ?>
+        <?php else: ?>
+          <?php foreach ($sub_category as $sub): ?>
+            <div class="col-sm-2">
+              <span><?= $sub->name; ?></span>
+            </div>
+          <?php endforeach ?>
+        <?php endif ?>
+        
+ <?php endif ?>
+ <div class="col-sm-1 nospace pull-right" style="margin-right:%;">
+     <div class="search">
+        <input type="text" class="btn_header" placeholder="search users">
+        <span class="line"></span>
+        <span class="circle"></span>
+      </div>
+  </div>
+</div>
+
+<div class="category_users col-sm-10 col-sm-offset-1 categoryajaxcontent">
 
 
-
-
-  <div class=" myspacer categoryajaxcontent">
-    <?php foreach ($users as $user): ?>
+  <?php foreach ($users as $user): ?>
+      <?php 
+        if(empty($user->media))
+          continue;
+       ?>
      <?php include('user-modal.php'); ?>
-    <?php endforeach ?>
-    
-  </div>
+  <?php endforeach ?>
 
 
-  <div class="row load-more load-element text-center">
-      <input type="hidden" id="category_id" value="<?= $category->id; ?>">
-      <input type="hidden" id="min_id" value="<?= $min_id; ?>">
-      <input type="hidden" id="x1" value="0">
-      <i class="fa fa-spinner fa-spin fa-2x"></i>
-  </div>
-   </div>
 
 
 </div>
+
+<div class="row load-more load-element text-center">
+      <input type="hidden" id="category_id" value="<?= $category->id; ?>">
+      <input type="hidden" id="min_id" value="<?= $min_id; ?>">
+      <input type="hidden" id="x1" value="0">
+      <!-- <i class="fa fa-spinner fa-spin fa-2x"></i> -->
+  </div>
+
+<div class="clearfix"></div>
+
+
+
 
 
 
@@ -102,6 +90,11 @@
 <?php include('newfooter.php'); ?>
 
 <script>
+
+
+
+
+
 $.fn.is_on_screen = function(){
     var win = $(window);
     var viewport = {
@@ -172,5 +165,5 @@ function updateStart(min)
 }
 
 </script>
-
+  
 </script>

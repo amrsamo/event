@@ -4,170 +4,265 @@
 <input type="hidden" id="homepage" value="1">
 <section class="container-fluid" id="landing" style="background-color: rgba(0,0,0,0.3);">
     <div class="v-center landing_content" style="margin-top: 27%;">
-        <h1 class="text-center">You Know Best How To Plan</h1>
-        <p class="text-center">
-            <br>
-            <div class="col-sm-12 text-center">
-              <?php if ($isLoggedIn): ?>
-                   <a href="<?= base_url(); ?>category/Capture%20The%20Moment" class="landing_a">Check Our Photographers!</a>
-              <?php else: ?>
-                <a href="#" class="landing_a" data-toggle="modal" data-target="#registerModal">
-                  Sign Up For Free
-                </a>
-              <?php endif ?>
-              <a href="<?= base_url(); ?>" class="landing_a">What's Trending?</a>
-            </div>
-        </p>
+        <h2 style="font-family: 'Nixie';font-weight:900;font-size: 300%;letter-spacing: 0px;" class="text-center">YOU KNOW BEST HOW TO PLAN</h2>
     </div>
-    <!-- <a href="#categories">
-        <div class="scroll-down bounceInDown animated">
-            <span>
-                <i class="fa fa-angle-down fa-2x"></i>
-            </span>
-        </div>
-    </a> -->
+
+    <!-- LANDING SOCIAL -->
+    <div class="landing_social">
+      <div class="col-sm-2">
+        <img class="img-responsive" src="<?= base_url(); ?>public/images/landing/fb.png">
+      </div>
+      <div class="col-sm-2">
+        <img class="img-responsive" src="<?= base_url(); ?>public/images/landing/insta.png">
+      </div>
+      <div class="col-sm-2">
+        <img class="img-responsive" src="<?= base_url(); ?>public/images/landing/pinterest.png">
+      </div>
+      <div class="col-sm-2">
+        <img class="img-responsive" src="<?= base_url(); ?>public/images/landing/snapch.png">
+      </div>
+      <div class="col-sm-2 tel">
+        <img class="img-responsive" src="<?= base_url(); ?>public/images/landing/tel.png">
+      </div>
+    </div>
+
+    <!-- LANDING BUTTONS -->
+    <div class="landing_btns">
+      <div class="col-sm-5">
+        <button class=" btn_header" >Sign up for free</button>
+      </div>
+      <div class="col-sm-5">
+        <button class=" btn_header" >Sign up for free</button>
+      </div>
+    </div>
+
 </section>
 
-
-<section class="container-fluid container-nofull" id="categories" style="">
-<div class="newbanner text-center">
-  <h2 style="font-size: 200%;">
+<div class="newbanner text-center" id="categories">
+  <span>
     CATEGORIES
-  </h2>
+  </span>
 </div>
-<div class="bannerspacer"></div>
-<div class="grid">
-  <?php foreach ($categories as $x): ?>
-  <div class="col-sm-4 " style="padding:0px;">
-    <div class="imagecaption-xs visible-xs">
-          <!-- <h4 style="font-size:1.2em">
-            <?= $x->name; ?>
-          </h4> -->
-      </div>
-    <div>
-      <figure class="effect-oscar  wowload fadeInUp" style="width:100%;padding:1%;background-color: white;">
-        <img class="img-responsive category_image" style="width:100%;" src="<?= base_url().$x->image_url ?>" alt="img01"/>
-        <figcaption style="padding-top:35%;">
-                <p class="p-large"><?= $x->info; ?><br>
-                <a href="<?= base_url().'category/'.rawurlencode($x->name); ?>" title="<?= $x->name; ?>" style="text-decoration:none;border:none;">
-                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                  Check Out The Best
+
+<section class="container-fluid container-nofull"  style="padding-bottom: 8%;">
+  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" style="background-color: white;margin-top: 8%;padding:0px;">
+    <?php foreach ($categories as $x): ?>
+    <div class="category_item col-sm-4 nospace">
+        <div class="imagecaption">
+            <h4>
+              <?= $x->category->name; ?>
+            </h4>
+            <div class="imagecaption_hover nospace">
+              <?php foreach ($x->sub as $sub): ?>
+                <a href="<?= base_url(); ?>category/<?= rawurlencode($x->category->name) ?>?filter=<?= rawurlencode($sub->name); ?>">
+                  <span data-target="<?= base_url(); ?>category/"> . <?= $sub->name; ?></span>
                 </a>
-                </p>
-            </figcaption>
-      </figure>
-      <div class="imagecaption hidden-xs" style="display: none;">
-          <h4 style="font-size:1.2em">
-            <?= $x->name; ?>
-          </h4>
-      </div>
+              <?php endforeach ?>
+                <a href="<?= base_url(); ?>category/<?= rawurlencode($x->category->name) ?>">
+                  <span> . All</span>
+                </a>
+            </div>
+        </div>
+       <img class="img-responsive category_image" style="width:100%;" src="<?= base_url().$x->category->image_url ?>" alt="img01"/>
     </div>
+    <?php endforeach ?> 
   </div>
-  <?php endforeach ?> 
-</div>
 </section>
 
-<section class="container-fluid container-nofull" id="about">
-    <div class="white">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="newbanner text-center">
-                  <h2 style="font-size: 200%;">
-                    ABOUT
-                  </h2>
+
+
+<div class="newbanner text-center" id="about">
+  <span>
+    ABOUT
+  </span>
+  <p>Nobody should convince you they know better. When it comes to your very own event, You might just need some guidance and hints. Thats's all !!</p>
+</div>
+
+<section class="container-fluid"  style="min-height: 0px;">
+  <div class="section-white-content">
+      <div class="row" style="padding-top:0px;">
+          <div class="col-sm-4" style="text-align: center;">
+            <p class="header-md">FOLLOWER</p>
+            <p class="about_desc col-sm-12" style="font-size:1.2em;color:#777">
+              If you like to follow the scene in Egypt and what's trending regarding the events, <a href="">Eventopic</a> can get you all the information you need in one place. 
+            </p>
+          </div>
+          <div class="col-sm-4" style="text-align: center;">
+            <p class="header-md">TALENT</p>
+            <p class="about_desc col-sm-12" style="font-size:1.2em;color:#777">
+              Add your portfolio and show your talent on <a href="">Eventopic</a>, The one place that has it all ;) 
+            </p>
+          </div>
+          <div class="col-sm-4" style="text-align: center;">
+            <p class="header-md">VENUE</p>
+            <p class="about_desc col-sm-12" style="margin-top:5%;font-size:1.2em;color:#777">
+              Are you interested in renting your venue for events? Add your portfolio on <a href="">Eventopic</a> and get more requests every day.
+            </p>
+          </div>
+
+          <div class="col-sm-12 text-center luckysigns_btn animated infinite bounce" style="margin-top:5%;">
+            <img class="img-responsive" style="width:22%;margin:0 auto;" src="<?= base_url();?>public/images/luckysigns.jpg">
+          </div>
+
+
+          <div class="luckysigns_div col-sm-10 col-sm-offset-1">
+            <div class="row">
+
+                <div class="col-sm-4">
+                  <div class="col-sm-4 col-sm-offset-4">
+                    <img class=" img-responsive" src="<?= base_url();?>public/images/signs/4leaveclover.png">
+                  </div>
+                  <div class="col-sm-12 text-center">
+                    <span>4 leave clover</span>
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                  <div class="col-sm-4 col-sm-offset-4">
+                    <img class=" img-responsive" src="<?= base_url();?>public/images/signs/wishbone.png">
+                  </div>
+                  <div class="col-sm-12 text-center">
+                    <span>wishbone</span>
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                  <div class="col-sm-4 col-sm-offset-4">
+                    <img class=" img-responsive" src="<?= base_url();?>public/images/signs/ladybird.png">
+                  </div>
+                  <div class="col-sm-12 text-center">
+                    <span>ladybird</span>
+                  </div>
+                </div>
+                
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-sm-4">
+                  <div class="col-sm-4 col-sm-offset-4">
+                    <img class=" img-responsive" src="<?= base_url();?>public/images/signs/dreamcatcher.png">
+                  </div>
+                  <div class="col-sm-12 text-center">
+                    <span>dreamcatcher</span>
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                  <div class="col-sm-4 col-sm-offset-4">
+                    <img class=" img-responsive" src="<?= base_url();?>public/images/signs/barnstar.png">
+                  </div>
+                  <div class="col-sm-12 text-center">
+                    <span>barnstar</span>
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                  <div class="col-sm-4 col-sm-offset-4">
+                    <img class=" img-responsive" src="<?= base_url();?>public/images/signs/horseshoe.png">
+                  </div>
+                  <div class="col-sm-12 text-center">
+                    <span>horseshoe</span>
+                  </div>
+                </div>
+                
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-4 col-sm-offset-4">
+                  <div class="col-sm-4 col-sm-offset-4">
+                    <img class=" img-responsive" src="<?= base_url();?>public/images/signs/fish.png">
+                  </div>
+                  <div class="col-sm-12 text-center">
+                    <span>fish</span>
+                  </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-sm-4 col-sm-offset-4">
+                  <div class="col-sm-12 text-center">
+                    <span><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></span>
+                  </div>
                 </div>
             </div>
-        </div>
-        <div class="bannerspacer"></div>
-
-<div class="section-white-content">
-    <div class="row" style="padding-top:20px;">
-        <div class="col-sm-4" style="text-align: center;">
-          <p style="font-size:1.4em;text-align: center;">FOLLOWER</p>
-          <!-- <img class="col-sm-6 col-sm-offset-3" src="<?= base_url();?>public/media/icons/follower.png"> -->
-          <!-- <i class="fa fa-users fa-5x" aria-hidden="true"></i> -->
-          <p class="about_desc col-sm-12" style="font-size:1.2em;color:#777">
-            If you like to follow the scene in Egypt and what's trending regarding the events, <a href="">Eventopic</a> can get you all the information you need in one place. 
-          </p>
-        </div>
-        <div class="col-sm-4" style="text-align: center;">
-          <p style="font-size:1.4em;text-align: center;">TALENT</p>
-          <!-- <img class=" col-sm-6 col-sm-offset-3" src="<?= base_url();?>public/media/icons/talent.png"> -->
-          <!-- <i class="fa fa-asterisk fa-5x" aria-hidden="true"></i> -->
-          <p class="about_desc col-sm-12" style="font-size:1.2em;color:#777">
-            Add your portfolio and show your talent on <a href="">Eventopic</a>, The one place that has it all ;) 
-          </p>
-        </div>
-        <div class="col-sm-4" style="text-align: center;">
-          <p style="font-size:1.4em;text-align: center;">VENUE</p>
-          <!-- <img class=" col-sm-6 col-sm-offset-3" src="<?= base_url();?>public/media/icons/hotel.png"> -->
-          <!-- <i class="fa fa-location-arrow fa-5x" aria-hidden="true"></i> -->
-          <p class="about_desc col-sm-12" style="margin-top:5%;font-size:1.2em;color:#777">
-            Are you interested in renting your venue for events? Add your portfolio on <a href="">Eventopic</a> and get more requests every day.
-          </p>
-        </div>
-
-        <div class="col-sm-12 text-center" style="margin-top:5%;">
-          <h3 style="background-color: black;color:white;">OUR LUCKY SIGNS</h3>
-        </div>
-        <div class="row">
-            <div class="col-sm-4 col-xs-4" style="text-align: center;">
-            <p style="font-size:1.3em;text-align: center;">4 Leave Clover</p>
-            <img class="lucky col-sm-4 col-sm-offset-4 img-responsive" src="<?= base_url();?>public/images/signs/4leaveclover.png">
           </div>
-          <div class="col-sm-4 col-xs-4" style="text-align: center;">
-            <p style="font-size:1.3em;text-align: center;">Wishbone</p>
-            <img class="lucky col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/wishbone.png">
-          </div> 
-          <div class="col-sm-4 col-xs-4" style="text-align: center;">
-            <p style="font-size:1.3em;text-align: center;">Lady Bird</p>
-            <img class="lucky col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/ladybird.png">
-          </div> 
-        </div>
-        
-        <div class="row" style="margin-top: 5%;">
-          <div class="col-sm-4 col-xs-4" style="text-align: center;">
-            <p style="font-size:1.4em;text-align: center;">barnstar</p>
-            <img class="lucky col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/barnstar.png">
-          </div> 
-          <div class="col-sm-4 col-xs-4" style="text-align: center;">
-            <p style="font-size:1.4em;text-align: center;">horseshoe</p>
-            <img class="lucky col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/horseshoe.png">
-          </div> 
-          <div class="col-sm-4 col-xs-4" style="text-align: center;">
-            <p style="font-size:1.4em;text-align: center;">fish</p>
-            <img class="lucky col-sm-4 col-sm-offset-4" style="height:60px;" src="<?= base_url();?>public/images/signs/fish.png">
-          </div>
-        </div>
-        
-        <div class="col-sm-4 col-xs-4 col-xs-offset-4 col-sm-offset-4" style="text-align: center;margin-top: 5%;">
-          <p style="font-size:1.4em;text-align: center;">dream catcher</p>
-          <img class="lucky col-sm-4 col-sm-offset-4" style="height:100px;" src="<?= base_url();?>public/images/signs/dreamcatcher.png">
-        </div>   
-    </div>
+             
+      </div>
 
-    <p style="color:black;font-size: 1.4em;text-align: center;width:80%;margin-left:10%;padding:2%;">
-      Nobody should convice you they know better. When it comes to your own event, You might just need some guidance and hints and that's all.
-    </p>
-</div>
-        <!--/row-->
-        <div class="row">
-            <br>
-        </div>
-    </div>
+  </div>
     <!--/container-->
 </section>
 
 
+<div class="container-fluid container-nofull" style="height:10px;">
+</div>
+
+<div class="newbanner text-center" id="trending">
+  <span>
+    TRENDING
+  </span>
+</div>
+
+<section class="container-fluid container-nofull"  style="padding-bottom: 0%;">
+  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" style="background-color: white;margin-top: 4%;padding:0px;">
+    
+    <div class="row">
+    <!-- Carousel -->
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+          <div class="item active">
+            <img src="<?= base_url(); ?>public/images/andreas-ronningen-29698.jpg" alt="First slide">
+                    <!-- Static Header -->
+                    <div class="header-text hidden-xs">
+                        <div class="row">
+                          <div class="col-sm-12 text-center nospace">
+                              <img class="img-responsive" src="<?= base_url(); ?>public/images/profile1.jpg">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12 nospace">
+                            <h2>User Name</h2>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12 nospace">
+                            <button class="btn_header">Go To Profile</button>
+                          </div>
+                        </div>    
+                        
+                    </div><!-- /header-text -->
+          </div>
+      </div>
+      <!-- Controls -->
+      <!-- <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+      </a> -->
+    </div><!-- /carousel -->
+  </div>
+
+
+  </div>
+</section>
 
 
 
 
 
-
-<section class="container-fluid container-nofull" id="contact">
+<section class="container-fluid container-nofull" id="contact" style="min-height: 0%;margin-bottom: 5%;">
     <div class="white">
-         <div class="row">
             <div class="col-md-12">
                 <div class="newbanner text-center">
                   <h2 style="font-size: 200%;">
@@ -175,51 +270,28 @@
                   </h2>
                 </div>
             </div>
-        </div>
-        <div class="bannerspacer"></div>
         <div class="row section-white-content">
-            <div class="col-md-8 col-md-offset-1">
+            <div class="col-md-8 col-md-offset-2">
                 <div class="row form-group">
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" required="">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" id="middleName" name="firstName" placeholder="Middle Name" required="">
-                    </div>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" required="">
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Name" required="">
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col-sm-5">
-                        <input type="email" class="form-control" name="email" placeholder="Email" required="">
-                    </div>
-                    <div class="col-sm-5">
-                        <input type="email" class="form-control" name="phone" placeholder="Phone" required="">
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Email" required="">
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col-sm-10">
-                        <input type="homepage" class="form-control" placeholder="Website URL" required="">
+                    <div class="col-sm-12">
+                        <textarea rows="3" class="form-control" placeholder="Message"></textarea>
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col-sm-10">
-                        <button class="btn btn-default btn-lg pull-right">Contact Us</button>
+                    <div class="col-sm-4 col-sm-offset-4">
+                        <input class="form-control btn_event" type="submit" name="" value="send">
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3 pull-right">
-                <address>
-                  <strong>Some LLC</strong><br>
-                  795 Folsom Ave, Suite 600<br>
-                  Newport, RI 94107<br>
-                  P: (123) 456-7890
-                </address>
-                <address>
-              <strong>Email Us</strong><br>
-              <a href="mailto:#">first.last@example.com</a>
-            </address>
             </div>
         </div>
     </div>
@@ -230,3 +302,42 @@
 
 
 <?php include('newfooter.php'); ?>
+
+<script type="text/javascript">
+  
+  
+  $(".category_item").hover(function(){
+
+    $(this).find('.imagecaption h4').css('background-color','white');
+    $(this).find('.imagecaption_hover').css('background-color','rgba(255,255,255,0.1)');
+    // $(this).find('.imagecaption_hover').removeClass('hide');
+    $(this).find('.imagecaption_hover').slideDown('fast');
+
+  });
+
+
+  $(".category_item").mouseleave(function(){
+
+    $(this).find('.imagecaption h4').css('background-color','rgba(255,255,255,0.8)');
+    $(this).find('.imagecaption_hover').slideUp('fast');
+
+  });
+
+
+
+  $(".luckysigns_btn").click(function(){
+
+    $(".luckysigns_div").slideDown('slow');
+
+  }); 
+
+
+  $(".fa-arrow-circle-up").click(function(){
+
+    $(".luckysigns_div").slideUp('slow');
+
+  }); 
+
+  
+
+</script>

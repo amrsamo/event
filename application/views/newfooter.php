@@ -1,69 +1,30 @@
 <section class="container-fluid" id="section7">
     <div class="row">
         <!--fontawesome icons-->
-        <div class="col-sm-1 col-sm-offset-3 col-xs-4 text-center">
-            <i class="fa fa-github fa-4x"></i>
-        </div>
-        <div class="col-sm-1 col-xs-4 text-center">
-            <i class="fa fa-foursquare fa-4x"></i>
-        </div>
-        <div class="col-sm-1 col-xs-4 text-center">
-            <i class="fa fa-pinterest fa-4x"></i>
-        </div>
-        <div class="col-sm-1 col-xs-4 text-center">
-            <i class="fa fa-google-plus fa-4x"></i>
-        </div>
-        <div class="col-sm-1 col-xs-4 text-center">
-            <i class="fa fa-twitter fa-4x"></i>
-        </div>
-        <div class="col-sm-1 col-xs-4 text-center">
-            <i class="fa fa-dribbble fa-4x"></i>
+        <div class="col-sm-6 col-sm-offset-3">
+          <div class="col-sm-2 col-sm-offset-1">
+            <img class="img-responsive fb_image" src="<?= base_url(); ?>public/images/icons/fb_w.png" >
+          </div>
+          <div class="col-sm-2">
+            <img class="img-responsive" src="<?= base_url(); ?>public/images/icons/insta_w.png" >
+          </div>
+          <div class="col-sm-2">
+            <img class="img-responsive" src="<?= base_url(); ?>public/images/icons/snapch_w.png" >
+          </div>
+          <div class="col-sm-2">
+            <img class="img-responsive" src="<?= base_url(); ?>public/images/icons/pinterest_w.png" >
+          </div>
+          <div class="col-sm-2">
+            <img class="img-responsive tel_image" src="<?= base_url(); ?>public/images/icons/tel_w.png" >
+          </div>
         </div>
     </div>
 </section>
 
 <footer id="footer">
     <div class="container">
-        <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-3 column">
-                <h4>Information</h4>
-                <ul class="nav">
-                    <li><a href="about-us.html">Products</a></li>
-                    <li><a href="about-us.html">Services</a></li>
-                    <li><a href="about-us.html">Benefits</a></li>
-                    <li><a href="elements.html">Developers</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-6 col-md-3 column">
-                <h4>Follow Us</h4>
-                <ul class="nav">
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Google+</a></li>
-                    <li><a href="#">Pinterest</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-6 col-md-3 column">
-                <h4>Contact Us</h4>
-                <ul class="nav">
-                    <li><a href="#">Email</a></li>
-                    <li><a href="#">Headquarters</a></li>
-                    <li><a href="#">Management</a></li>
-                    <li><a href="#">Support</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-6 col-md-3 column">
-                <h4>Customer Service</h4>
-                <ul class="nav">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Delivery Information</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms &amp; Conditions</a></li>
-                </ul>
-            </div>
-        </div>
         <!--/row-->
-        <p class="text-right">©2015</p>
+        <p class="text-center">©2015</p>
     </div>
 </footer>
 
@@ -74,14 +35,8 @@
 <div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h2 class="text-center">
-                <img style="width:50%;margin:0 auto;" class="img-responsive" src="<?= base_url(); ?>public/images/logo black.png" class="img-circle">
-                <br>Login</h2>
-            </div>
             <div class="modal-body row">
-                <h6 class="text-center">COMPLETE THESE FIELDS TO SIGN UP</h6>
+                <h6 class="text-center">COMPLETE THESE FIELDS TO LOG IN</h6>
                 <form action="<?= base_url(); ?>followerlogin" method="post" class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
                     <div class="form-group">
                         <input name="email" type="email" class="form-control input-lg" placeholder="Email">
@@ -95,57 +50,35 @@
                     </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <h6 class="text-center"><a href="">Privacy is important to us. Click here to read why.</a></h6>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="signUpPopUp" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body row">
+                <h6 class="text-center">COMPLETE THESE FIELDS TO SIGN UP</h6>
+                <form action="<?= base_url(); ?>signup" method="post" class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
+                    <div class="form-group">
+                        <input type="email" name="email" value="<?= ( isset($input)? $input['email'] : (isset($mail)? $mail : '') );?>" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4" required>
+                    </div>
+                    <div class="form-group">
+                       <input type="submit" name="register" value="Register Now" class="btn btn-main btn-block " tabindex="7"></div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
 
 
-<!-- Modal -->
-<div id="signUpPopUp" class="modal fade" role="dialog">
-  <div class="modal-dialog" style="border:none;">
-    <!-- Modal content-->
-    <div class="modal-content" style="border:none;">
-      <div class="modal-body" style="border:none;">
-        <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-1 col-md-offset-1">
-            <form role="form" method="post" action="<?= base_url(); ?>signup" >
-              <h2>Please Sign Up..<small>and access all our cool features</small></h2>
-              <hr class="colorgraph">
-              <div class="form-group">
-                <input type="email" name="email" value="<?= ( isset($input)? $input['email'] : (isset($mail)? $mail : '') );?>" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4" required>
-              </div>
-              <hr class="colorgraph">
-              <div class="row">
-                <div class="col-xs-12 col-md-6 col-md-offset-3">
-                <input type="submit" name="register" value="Register Now" class="btn btn-main btn-block " tabindex="7"></div>
-              </div>
-            </form>
-          </div>
-          <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-1 col-md-offset-1">
-            <form role="form" method="post" action="<?= base_url(); ?>followerlogin" >
-              <h2>Already a User ?<small> Login now..</small></h2>
-              <hr class="colorgraph">
-              <div class="form-group">
-                <input type="email" name="email" value="" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4" required>
-                <input type="password" name="password" value="" id="password" class="form-control input-lg" placeholder="Email Address" tabindex="4" required>
-              </div>
-              <hr class="colorgraph">
-              <div class="row">
-                <div class="col-xs-12 col-md-6 col-md-offset-3">
-                <input type="submit" name="register" value="Login" class="btn btn-main btn-block" tabindex="7"></div>
-              </div>
-            </form>
-          </div>
-      </div>
-      <div class="modal-footer" style="border:none;">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
 
-  </div>
-</div>
+
+
+
 
 
 
@@ -206,5 +139,19 @@
     <script src="<?= base_url() ?>public/personal_template/assets/jquery.masonry.min.js"></script>
     
     <script src="<?= base_url(); ?>public/js/new_scripts.js"></script>
+     <script src="<?= base_url(); ?>public/js/jquery.bxslider.min.js"></script>
   </body>
 </html>
+
+
+<script type="text/javascript">
+  
+  var fb_image_height = $(".fb_image").height();
+  var tel_image_height = $(".tel_image").height();
+  
+  var different = tel_image_height - fb_image_height;
+  different = different/2;
+  $(".tel_image").css('margin-top','-'+different+'px');
+  // alert(fb_image_height);
+
+</script>
