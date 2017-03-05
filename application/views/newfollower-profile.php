@@ -14,12 +14,11 @@
     
     <div class="row nospace">
         <div class="col-sm-2 nospace">
-          <img class="img-responsive img-circle" src="<?= base_url().$user->profile_picture->source_url; ?>" >
+          <img class="img-responsive img-circle" src="<?= base_url(); ?>public/images/usernotfound.jpg">
         </div>
         <div class="user_title col-sm-10">
           <h2><?= $follower->username; ?></h2>
           <span><?= $follower->first_name.' '.$follower->last_name; ?></span>
-          <span class="pull-right"><?= $follower->city_name.', '.$follower->country_name; ?></span>
         </div>
     </div>
 
@@ -28,34 +27,13 @@
       <div class="col-sm-8 col-sm-offset-2 user_info">
         <div class="col-sm-10 bio_section">
           <div class="col-sm-6">
-            <h2>FOLLOWING</h2>
-            <p>count($following);</p>
-          </div>
-          <div class="col-sm-6">
-            <h2>LIKES</h2>
-            <p>count($likes);</p>
-          </div>
-
-          <div class="col-sm-6">
             <h2>EMAIL</h2>
             <p><?= $follower->email; ?></p>
           </div>
           <div class="col-sm-6">
             <h2>ADDRESS</h2>
-            <p><?= $follower->address; ?></p>
+            <p><?= $follower->city_name.', '.$follower->country_name; ?></p>
           </div>
-          <?php exit(); ?>
-        </div>
-        <div class="col-sm-2 contacts_section">
-          <?php if (isset($social)): ?>
-            <?php foreach ($social as $x): ?>
-              <div class="col-sm-12 nospace">
-                <a href="<?= $x->link; ?>">
-                  <img class="img-responsive"  src="<?= base_url(); ?>public/images/landing/<?= $x->image; ?>">
-                </a>
-              </div>
-            <?php endforeach ?>
-          <?php endif ?>
         </div>
       </div>
     </div>
@@ -64,13 +42,16 @@
 
 <div class="category_filters col-sm-10 col-sm-offset-1">
   <div class="col-sm-1">
-    <span>all</span>
+    <span>Feed</span>
   </div>
   <div class="col-sm-1">
     <img src="<?= base_url(); ?>public/images/wishbone_crop.png" height="20" width="20">
   </div>
   <div class="col-sm-1 col-sm-offset-1">
-            <span>Albums</span>
+            <span>likes </span><p class="badge"><?= count($likes); ?></p>
+  </div>
+  <div class="col-sm-1 col-sm-offset-1">
+            <span>following </span><p class="badge"><?= count($following); ?></p>
   </div>
  <div class="col-sm-2 pull-right" style="margin-right: 3%;">
      <div class="search">
@@ -86,7 +67,7 @@
 <div class="category_users col-sm-10 col-sm-offset-1 categoryajaxcontent">
 
 <div class="row myspacer user-media">
-  <?php foreach ($media as $x): ?>
+  <?php foreach ($feed as $x): ?>
 
       <div class="col-sm-4 single_media_div nospace">
         <a class="mediaModal" id="<?= $x->id;?>" href="<?= base_url().$x->source_url; ?>" data-title="A random title" data-footer="A custom footer text" data-gallery="example-gallery" >
@@ -121,6 +102,7 @@
 
 
 <?php include('newfooter.php'); ?>
+
 <script type="text/javascript">
   var $container = $('.user-media');
   

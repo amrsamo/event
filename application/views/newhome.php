@@ -225,21 +225,19 @@
                     <!-- Static Header -->
                     <div class="header-text hidden-xs">
                         <div class="row">
-                          <div class="col-sm-12 text-center nospace">
-                              <img class="img-responsive" src="<?= base_url(); ?>public/images/profile1.jpg">
+                          <div class="col-sm-4 text-center nospace">
+                              <img class=" img-responsive" src="<?= base_url(); ?>public/images/profile1.jpg">
                           </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-sm-12 nospace">
-                            <h2>User Name</h2>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-sm-12 nospace">
+                          <div class="col-sm-6 pull-right">
                             <button class="btn_header">Go To Profile</button>
                           </div>
-                        </div>    
-                        
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12 nospace">
+                            <h2>Davenport_Quinn</h2>
+                            <span>Photographer</span>
+                          </div>
+                        </div>
                     </div><!-- /header-text -->
           </div>
       </div>
