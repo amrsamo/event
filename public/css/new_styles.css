@@ -1335,9 +1335,12 @@ nav ul li:hover ul.fallback {display:block;padding-left: 0px;}
     position: relative;
 }
 
+.big_header{
+  font-size: 110%;
+}
 
 .header_link_div{
-  margin-top: 2%;
+  margin-top: 1%;
   /*margin-left: 2%;*/
 }
 
@@ -1361,15 +1364,19 @@ nav ul li:hover ul.fallback {display:block;padding-left: 0px;}
 .categories_header_link a:active{
   text-decoration: none;
 }
+
+.navbar .btn_header{
+  font-size: 104%;
+}
 .sub_category{
   position: absolute;
   left:30%;
-  top:100%;
+  top:80%;
   /*height:50px;*/
   /*height:auto;*/
   width: 30%;
   background-color: black !important;
-  padding-top: 3%;
+  padding-top: 5%;
   padding-left: 2%;
   display: none;
   background:
@@ -1407,6 +1414,7 @@ nav ul li:hover ul.fallback {display:block;padding-left: 0px;}
   text-decoration: none;
   background-color: transparent !important;
   padding-bottom: 15px;
+  padding-top: 0px;
   background:
     linear-gradient(
       to left, 
@@ -1450,7 +1458,7 @@ nav ul li:hover ul.fallback {display:block;padding-left: 0px;}
     background-color: transparent;
     position: absolute;
     left: 41%;
-    height: 47%;
+    height: 38%;
     top: 52.8%;
     width: 40px;
     border-radius: 38%;
@@ -1462,7 +1470,7 @@ nav ul li:hover ul.fallback {display:block;padding-left: 0px;}
     background-color: transparent;
     position: absolute;
     right: 41%;
-    height: 47%;
+    height: 38%;
     top: 52.8%;
     width: 40px;
     border-radius: 38%;

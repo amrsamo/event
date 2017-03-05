@@ -40,12 +40,12 @@
         </div>
         <div class="navbar-collapse collapse" id="navbar-collapsible" >
             <div class="col-sm-5 nospace nav navbar-nav navbar-left nospace">
-                <div class="left_header_content" style="height:50px;background-color:black !important;color: white;">
-                    <div class="header_link_div header_hover col-sm-3 text-center">
-                        <a href="#landing">Home</a>
+                <div class="left_header_content" style="height:40px;background-color:black !important;color: white;">
+                    <div class="header_link_div big_header header_hover col-sm-3 text-center">
+                        <a href="#landing">home</a>
                     </div>
-                    <div class="header_link_div categories_header_link col-sm-3 text-center">
-                        <a href="#categories">Categories</a>
+                    <div class="header_link_div big_header categories_header_link col-sm-3 text-center">
+                        <a href="#categories">categories</a>
                     </div>
                     <div class="sub_category col-sm-12">
                             <?php foreach ($categories as $x): ?>
@@ -56,11 +56,11 @@
                                 </div>
                             <?php endforeach ?>
                         </div>
-                    <div class="header_link_div header_hover col-sm-3 text-center">
-                        <a href="#trending">Trending</a>
+                    <div class="header_link_div big_header header_hover col-sm-3 text-center">
+                        <a href="#trending">trending</a>
                     </div>
-                    <div class=" header_link_div header_hover col-sm-2 text-center">
-                        <a href="#about">About</a>
+                    <div class=" header_link_div big_header header_hover col-sm-2 text-center">
+                        <a href="#about">about</a>
                     </div>
                 </div>
             </div>
@@ -75,21 +75,21 @@
             <div id="arrow_right"></div>
             <div class="col-sm-5 nospace nav navbar-nav navbar-left nospace">
                 <?php if ($isLoggedIn): ?>
-                    <div class="left_header_content" style="height:50px;background-color:black !important;color: white;">
-                        <div class="header_link_div header_hover col-sm-3 text-center">
+                    <div class="left_header_content" style="height:40px;background-color:black !important;color: white;">
+                        <div class="header_link_div header_hover big_header col-sm-3 text-center" style="margin-right: 50px;">
                             <a href="#contact">Contact</a>
                         </div>
-                        <div class="header_link_div col-sm-2 text-center nospace" style="margin-top: 1.5%;">
+                        <div class="header_link_div col-sm-2 text-center nospace" >
                             <a href="<?= base_url(); ?>follower/<?= $loggedInFollower->username; ?>">
                                 <button class=" btn_header" >Profile</button>
                             </a>
                         </div>
-                        <div class="header_link_div col-sm-2 text-center nospace" style="margin-top: 1.5%;">
+                        <div class="header_link_div col-sm-2 text-center nospace">
                             <a href="<?= base_url(); ?>logout">
                                 <button class=" btn_header" >Logout</button>
                             </a>
                         </div>
-                        <div class="header_link_div col-sm-2 text-center nospace" style="margin-top: 1.5%;">
+                        <div class="header_link_div col-sm-2 text-center nospace">
                             <div class="search">
                               <input type="text" class="btn_header" placeholder="search..">
                               <span class="line"></span>
@@ -98,17 +98,17 @@
                         </div>
                     </div>
                 <?php else: ?>
-                    <div class="left_header_content" style="height:50px;background-color:black !important;color: white;">
-                        <div class="header_link_div header_hover col-sm-3 text-center">
+                    <div class="left_header_content" style="height:40px;background-color:black !important;color: white;">
+                        <div class="header_link_div header_hover big_header col-sm-3 text-center" style="margin-right: 50px;">
                             <a href="#contact">Contact</a>
                         </div>
-                        <div class="header_link_div col-sm-2 text-center nospace" style="margin-top: 1.5%;">
+                        <div class="header_link_div col-sm-2 text-center nospace">
                             <button data-toggle="modal" data-target="#loginModal" class=" btn_header" >login</button>
                         </div>
-                        <div class="header_link_div col-sm-2 text-center nospace" style="margin-top: 1.5%;">
+                        <div class="header_link_div col-sm-2 text-center nospace">
                             <button data-toggle="modal" data-target="#signUpPopUp" class=" btn_header" >sign up</button>
                         </div>
-                        <div class="header_link_div col-sm-2 text-center nospace" style="margin-top: 1.5%;">
+                        <div class="header_link_div col-sm-2 text-center nospace">
                             <div class="search">
                               <input type="text" class="btn_header" placeholder="search..">
                               <span class="line"></span>

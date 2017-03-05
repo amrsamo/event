@@ -8,7 +8,7 @@
 </style>
 
 
-<div class="col-sm-10 col-sm-offset-1" id="section1" style="background-image: url('<?= base_url().$category->image_url ?>');background-size: cover;margin-top:6.6%;padding-top: 10%;padding-bottom: 10%;padding-left:0px;padding-right:0px;">
+<div class="col-sm-10 col-sm-offset-1" id="section1" style="background-image: url('<?= base_url().$category->image_url ?>');background-size: cover;margin-top:6%;padding-top: 10%;padding-bottom: 10%;padding-left:0px;padding-right:0px;">
     
     <div class="category_desc nospace">
         <h1 class="text-center"><?= $category_name; ?></h1>
