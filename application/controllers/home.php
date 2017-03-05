@@ -113,7 +113,11 @@ class Home extends CI_Controller {
 			
 			$this->data['users'][] = $user;
 		}
-		$this->data['min_id'] = $this->data['users'][count($this->data['users'])-1]->user_id;
+
+		if (count($this->data['users']) > 0) {
+			$this->data['min_id'] = $this->data['users'][count($this->data['users'])-1]->user_id;
+		}
+		
 		
 		// $categories = $this->Category->get();
 		// $this->data['categories'] = $categories;

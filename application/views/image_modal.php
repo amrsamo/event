@@ -28,7 +28,7 @@
         </div>
         <div class="row modal-hover nospace">
            <div class="col-sm-1">
-             <img class="img-responsive img-circle" src="<?= base_url().$user->profile_picture->source_url; ?>">
+             <!-- <img class="img-responsive img-circle" src="<?= base_url().$user->profile_picture->source_url; ?>"> -->
            </div>
            <div class="col-sm-8 nospace">
              <h2 class="nospace"><?= $x->title; ?></h2>
