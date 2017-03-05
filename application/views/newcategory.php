@@ -66,7 +66,9 @@
 
 <div class="row load-more load-element text-center">
       <input type="hidden" id="category_id" value="<?= $category->id; ?>">
-      <input type="hidden" id="min_id" value="<?= $min_id; ?>">
+      <?php if (isset($min_id)): ?>
+        <input type="hidden" id="min_id" value="<?= $min_id; ?>">
+      <?php endif ?>
       <input type="hidden" id="x1" value="0">
       <!-- <i class="fa fa-spinner fa-spin fa-2x"></i> -->
   </div>
