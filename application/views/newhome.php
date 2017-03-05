@@ -75,7 +75,7 @@
   <span>
     ABOUT
   </span>
-  <p>Nobody should convince you they know better. When it comes to your very own event, You might just need some guidance and hints. Thats's all !!</p>
+    <p>Nobody should convince you they know better. When it comes to your very own event, You might just need some guidance and hints. Thats's all !!</p>
 </div>
 
 <section class="container-fluid"  style="min-height: 0px;">
