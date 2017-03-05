@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 04, 2017 at 06:23 PM
+-- Generation Time: Mar 05, 2017 at 02:59 PM
 -- Server version: 5.7.17-0ubuntu0.16.04.1
--- PHP Version: 7.0.15-0ubuntu0.16.04.2
+-- PHP Version: 7.0.15-0ubuntu0.16.04.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -68,7 +68,7 @@ INSERT INTO `user_type` (`id`, `type_name`, `category`, `sub_category`) VALUES
 (28, 'By The Beach', 6, 27),
 (29, 'Honeymoon & Travel', 8, 28),
 (30, 'Wedding List', 7, 29),
-(31, 'Out Of The Box', 9, 0);
+(31, 'Out Of The Box', 9, 30);
 
 --
 -- Indexes for dumped tables
@@ -89,7 +89,7 @@ ALTER TABLE `user_type`
 -- AUTO_INCREMENT for table `user_type`
 --
 ALTER TABLE `user_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
