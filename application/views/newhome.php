@@ -10,19 +10,19 @@
     <!-- LANDING SOCIAL -->
     <div class="landing_social">
       <div class="col-sm-2">
-        <img class="img-responsive" src="<?= base_url(); ?>public/images/landing/fb.png">
+        <img class="img-responsive" src="<?= base_url(); ?>public/images/icons/fb_w.png">
       </div>
       <div class="col-sm-2">
-        <img class="img-responsive" src="<?= base_url(); ?>public/images/landing/insta.png">
+        <img class="img-responsive" src="<?= base_url(); ?>public/images/icons/insta_w.png">
       </div>
       <div class="col-sm-2">
-        <img class="img-responsive" src="<?= base_url(); ?>public/images/landing/pinterest.png">
+        <img class="img-responsive" src="<?= base_url(); ?>public/images/icons/pinterest_w.png">
       </div>
       <div class="col-sm-2">
-        <img class="img-responsive" src="<?= base_url(); ?>public/images/landing/snapch.png">
+        <img class="img-responsive" src="<?= base_url(); ?>public/images/icons/snapch_w.png">
       </div>
       <div class="col-sm-2 tel">
-        <img class="img-responsive" src="<?= base_url(); ?>public/images/landing/tel.png">
+        <img class="img-responsive" src="<?= base_url(); ?>public/images/icons/tel_w.png">
       </div>
     </div>
 

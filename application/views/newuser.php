@@ -41,7 +41,7 @@
             <p><?= $user->address; ?></p>
           </div>
           <div class="col-sm-12">
-            <h2>CONTACT</h2>
+            <h2>PHONE</h2>
             <p>
             <?php $count = count($contacts); $counter = 0; ?>
             <?php foreach ($contacts as $x): ?>

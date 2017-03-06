@@ -218,7 +218,9 @@ class Home extends CI_Controller {
 	}
 
 	public function user($name)
-	{
+	{	
+
+		$name = urldecode($name);
 		$this->data['username'] = $name;
 		$user = $this->Adminuser->getUserByUsername($name)[0];
 		$user->profile_picture = $this->Adminuser->getUserProfilePicture($user->user_id)[0];
