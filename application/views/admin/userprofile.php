@@ -241,11 +241,11 @@
                         <form id="form_contact" action="javascript:void(0);" method="post">
                         <div class="form-group col-sm-4">
                             <label for="address" class="h4">Address</label>
-                            <input type="text" name="address" class="form-control" id="name"  maxlength="250" minlength="2" value="<?= isset($user->address) ? $user->address : '' ?>" required>
+                            <input type="text" name="address" class="form-control" id="name"  maxlength="250" minlength="2" value="<?= isset($user->address) ? $user->address : '' ?>">
                         </div>
                         <div class="form-group col-sm-4 col-sm-offset-1">
                             <label for="website" class="h4">Website</label>
-                            <input type="url" maxlength="250" minlength="2" value="<?= isset($user->website) ? $user->website : '' ?>" name="website" class="form-control" id="email" required="">
+                            <input type="url" maxlength="250" minlength="2" value="<?= isset($user->website) ? $user->website : '' ?>" name="website" class="form-control" id="email">
                         </div>
                     </div>
                     <div class="row">

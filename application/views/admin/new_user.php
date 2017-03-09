@@ -28,25 +28,25 @@
                         </div>
                         <div class="form-group col-sm-4 col-sm-offset-1">
                             <label for="verify" class="h4">Verify Password</label>
-                            <input type="password" name="verify" class="form-control" id="verify" maxlength="128" minlength="4" required>
+                            <input type="password" name="verify" class="form-control" id="verify" maxlength="128" minlength="4" >
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-4">
                             <label for="first_name" class="h4">First Name</label>
-                            <input type="text" name="first_name" class="form-control" id="first_name" maxlength="128" minlength="2" required>
+                            <input type="text" name="first_name" class="form-control" id="first_name" maxlength="128" minlength="2" >
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-4">
                             <label for="last_name" class="h4">Last Name</label>
-                            <input type="text" name="last_name" class="form-control" id="last_name" maxlength="128" minlength="2" required>
+                            <input type="text" name="last_name" class="form-control" id="last_name" maxlength="128" minlength="2" >
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-4">
                             <label for="bio" class="h4">Bio</label>
-                            <textarea rows="4" cols="50" name="bio" class="form-control" id="bio" required></textarea>
+                            <textarea rows="4" cols="50" name="bio" class="form-control" id="bio" ></textarea>
                         </div>
                         <div class="form-group col-sm-4 col-sm-offset-1">
                             <label for="country" class="h4">Country</label>
