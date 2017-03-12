@@ -64,10 +64,10 @@ class Admin extends CI_Controller {
 			}
 			else
 			{
-				$data['error'] = 'Login Failed';
+				$this->data['error'] = 'Login Failed';
 			}
-			var_dump($process);
-			exit();
+			// var_dump($process);
+			// exit();
 		}
 		$this->load->view('admin/login',$this->data);
 	}

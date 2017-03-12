@@ -24,7 +24,7 @@
                     <div class="row">
                         <div class="form-group col-sm-4">
                             <label for="email" class="h4">Email</label>
-                            <input type="email" name="email" class="form-control" id="email" required>
+                            <input type="email" name="email" class="form-control" id="email">
                         </div>
                         <div class="form-group col-sm-4 col-sm-offset-1">
                             <label for="verify" class="h4">Verify Password</label>

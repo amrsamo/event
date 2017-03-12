@@ -34,14 +34,15 @@ class User extends CI_Controller {
 						$password = $_POST['password'];
 						$verify   = $_POST['verify'];
 						
-							if($password == $verify)
-							{
+							// if($password == $verify)
+							// {
 								$usernameCheck = $this->Adminuser->get(array("username"=>$username));
 								if(empty($usernameCheck))
 								{
-									$emailCheck = $this->Adminuser->get(array("email"=>$email));
-									if(empty($emailCheck))
-									{
+									//$emailCheck = $this->Adminuser->get(array("email"=>$email));
+									// if(empty($emailCheck))
+									// {
+										// printme($_POST);exit();
 										$process = $this->Adminuser->insert($_POST);
 										if($process)
 										{
@@ -50,11 +51,11 @@ class User extends CI_Controller {
 										}
 										else
 											$data['error'] = 'Process failed, Please try again.';
-									}
-									else
-									{
-										$data['error'] = 'Email not available, Please Choose another one.';
-									}
+									// }
+									// else
+									// {
+									// 	$data['error'] = 'Email not available, Please Choose another one.';
+									// }
 									
 								}
 								else
@@ -63,11 +64,11 @@ class User extends CI_Controller {
 								}
 								
 
-							}
-							else
-							{
-								$data['error'] = 'Password is not verified correctly';
-							}
+							// }
+							// else
+							// {
+							// 	$data['error'] = 'Password is not verified correctly';
+							// }
 				}
 				
 		$this->load->view('admin/new_user',$data);
