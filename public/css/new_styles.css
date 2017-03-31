@@ -906,7 +906,7 @@ a:hover {
     padding-bottom:100%;
 }
 .modal-body .image img{
-    position:absolute;
+    /*position:absolute;*/
 }
 
 .modal-hover{
