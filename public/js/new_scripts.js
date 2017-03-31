@@ -58,6 +58,17 @@ $(window).load(function(){
   //   $(".brand-div img").css('width',$(".navbar-left").height()+'px');
   // }
     
+var sub_category_hover = false;
+var categories_header_link_hover = false;
+
+$(".sub_category").hover(function(){
+  sub_category_hover = true;
+});
+
+$(".sub_category").mouseleave(function(){
+  sub_category_hover = false;
+});
+
 
   $(".navbar").css('visibility','visible');
   // style="visibility: hidden"
@@ -67,7 +78,22 @@ $(window).load(function(){
   $(".categories_header_link").hover(function(){
 
     $('.sub_category').slideDown('fast');
+    categories_header_link_hover = true;
 
+  });
+
+  $(".categories_header_link").mouseleave(function(){
+      setTimeout(
+      function() 
+      {
+
+        if(sub_category_hover == false){
+          $('.sub_category').slideUp('fast');
+          // categories_header_link_hover = false;
+        }
+
+      }, 500);
+      categories_header_link_hover = false;
   });
 
 
@@ -75,7 +101,15 @@ $(window).load(function(){
 
   $(".sub_category").mouseleave(function(){
 
-    $('.sub_category').slideUp('fast');
+    // $('.sub_category').slideUp('fast');
+    setTimeout(
+      function() 
+      {
+
+        if(sub_category_hover == false && categories_header_link_hover == false)
+          $('.sub_category').slideUp('fast');
+
+      }, 500);
 
   });
 

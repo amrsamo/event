@@ -191,7 +191,9 @@ class User extends CI_Controller {
 			$user = $this->Adminuser->get(array("username"=>$username));
 			$user = $user[0];
 
-			
+
+			// printme($user);
+			// exit();
 
 			//GET THE USER CONTACT NUMBERS
 			$user_contacts =$this->User_Contact->getUserContacts($user->id);
@@ -271,10 +273,18 @@ class User extends CI_Controller {
 			$data['user'] = $user;
 			$data['uploadscripts'] = true;
 
+
 			$this->session->set_userdata('uploadid', $user->id.'test');
 			$this->load->view('admin/userprofile',$data);
 	}
 
+
+	public function setuserrank($id,$rank)
+	{
+		$process = $this->Adminuser->update(array('rank'=>$rank),array('id'=>$id));
+		print json_encode( array('success' => true, 'message' => "Values updated." ) );
+		exit();
+	}
 
 	public function media($username)
 	{	
@@ -323,6 +333,7 @@ class User extends CI_Controller {
 	{	
 
 		$data = array();
+		$username = urldecode($username);
 		$data['user'] = $this->Adminuser->get(array("username"=>$username));
 		$data['user'] = $data['user'][0];
 		$this->load->view('admin/deleteuser',$data);
@@ -330,6 +341,7 @@ class User extends CI_Controller {
 
 	public function confirmuserdelete($username)
 	{	
+		$username = urldecode($username);
 		$process = $this->Adminuser->delete(array('username'=>$username));
 		redirect(base_url().'admin/users');
 	}

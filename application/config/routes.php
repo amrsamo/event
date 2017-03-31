@@ -60,6 +60,7 @@ $route['admin/uploadmedia/(:any)'] = "upload/media/$1";
 $route['admin/updatemedia/(:any)'] = "user/updatemedia/$1";
 $route['admin/deletemedia/(:any)'] = "user/deletemedia/$1";
 $route['admin/addtestusers'] = "user/addtestusers";
+$route['admin/setuserrank/(:any)/(:any)'] = "user/setuserrank/$1/$2";
 
 
 

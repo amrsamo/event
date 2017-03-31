@@ -95,8 +95,48 @@ class Home extends CI_Controller {
 
 			//Get User media
 			$media = $this->Media->get(array('user_id'=> $user->user_id),null,8);
-			$user->media = $media;
+			$media_final=array();
+			foreach ($media as $x) {
+				$random_number = mt_rand(1000000,9999999);
+				$x->random_number = $random_number;
+				$media_final[] = $x;
+			}
+			
+			$user->media = $media_final;
+			$output = array();
+			foreach ($user->media as $x) {
 
+				if(isset($this->isLoggedIn) && $this->isLoggedIn)
+				{
+					$media = $x;
+					$conditions = array();
+					$conditions['follower_id'] = $this->data['loggedInFollower']->id;
+					$conditions['media_id'] = $x->id;
+					$media->like = $this->Follower->checkLike($conditions);
+				}
+				else
+				{
+					$media = $x;
+					$media->like = false;
+				}
+
+				// GET MEDIA STATISTICS
+				$statistics = $this->Media_Statistics->get(array('media_id'=> $media->id));
+				if(empty($statistics))
+				{	
+					$statistics = new stdClass();
+					$statistics->views = 0;
+					$statistics->likes = 0;
+					$media->statistics = $statistics;
+				}
+				else
+				{
+					$media->statistics = $statistics[0];
+				}
+				$output[] = $media;
+			}
+
+			$user->media = $output;
 
 			//GET USER RELATION (FOLLOWED OR NOT)
 			if(isset($this->isLoggedIn) && $this->isLoggedIn)
@@ -166,7 +206,49 @@ class Home extends CI_Controller {
 
 			//Get User media
 			$media = $this->Media->get(array('user_id'=> $user->user_id),null,8);
-			$user->media = $media;
+			$media_final=array();
+			foreach ($media as $x) {
+				$random_number = mt_rand(1000000,9999999);
+				$x->random_number = $random_number;
+				$media_final[] = $x;
+			}
+			
+			$user->media = $media_final;
+			// $user->media = $media;
+			$output = array();
+			foreach ($user->media as $x) {
+
+				if(isset($this->isLoggedIn) && $this->isLoggedIn)
+				{
+					$media = $x;
+					$conditions = array();
+					$conditions['follower_id'] = $this->data['loggedInFollower']->id;
+					$conditions['media_id'] = $x->id;
+					$media->like = $this->Follower->checkLike($conditions);
+				}
+				else
+				{
+					$media = $x;
+					$media->like = false;
+				}
+
+				// GET MEDIA STATISTICS
+				$statistics = $this->Media_Statistics->get(array('media_id'=> $media->id));
+				if(empty($statistics))
+				{	
+					$statistics = new stdClass();
+					$statistics->views = 0;
+					$statistics->likes = 0;
+					$media->statistics = $statistics;
+				}
+				else
+				{
+					$media->statistics = $statistics[0];
+				}
+				$output[] = $media;
+			}
+
+			$user->media = $output;
 
 
 			//GET USER RELATION (FOLLOWED OR NOT)

@@ -17,6 +17,8 @@
     <!-- <link rel="stylesheet" href="<?= base_url() ?>public/personal_template/assets/animate/set.css" /> -->
     <link rel="stylesheet" href="<?= base_url(); ?>public/css/new_styles.css" />
     <link rel="stylesheet" href="<?= base_url(); ?>public/css/jquery.bxslider.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+
   </head>
   <body >
     <?php if ($isLoggedIn): ?>
@@ -47,7 +49,7 @@
                     <div class="header_link_div big_header categories_header_link col-sm-3 text-center">
                         <a href="#categories">categories</a>
                     </div>
-                    <div class="sub_category col-sm-12">
+                    <div id="sub_category_id"class="sub_category col-sm-12">
                             <?php foreach ($categories as $x): ?>
                                 <div class="col-sm-12 nospace">
                                     <a href="<?= base_url().'category/'.rawurlencode($x->category->name); ?>">

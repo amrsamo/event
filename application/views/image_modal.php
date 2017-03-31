@@ -21,12 +21,7 @@
         </h4>
       </div> -->
       <div class="modal-body">
-        <div class="row">
-          <div class="col-sm-12">
-            <img class="image-modal img-responsive" src="<?= base_url().$x->source_url; ?>">
-          </div>
-        </div>
-        <div class="row modal-hover nospace">
+      <div class="row modal-hover nospace">
            <div class="col-sm-1">
              <!-- <img class="img-responsive img-circle" src="<?= base_url().$user->profile_picture->source_url; ?>"> -->
            </div>
@@ -48,6 +43,12 @@
               </div>
            </div>
         </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <img class="image-modal img-responsive" src="<?= base_url().$x->source_url; ?>">
+          </div>
+        </div>
+        
       </div>
       <!-- <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -56,3 +57,6 @@
     
   </div>
 </div> <!-- END MODAL -->
+
+
+

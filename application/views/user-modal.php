@@ -42,9 +42,9 @@
 
         <ul class="bxslider">
             <?php foreach ($user->media as $x): ?>
+                <?php $x->id = $x->random_number; ?>
                  <li><a class="mediaModal" id="<?= $x->id;?>" href="<?= base_url().$x->source_url; ?>" data-title="A random title" data-footer="A custom footer text" data-gallery="example-gallery" >
                 <img data-toggle="modal" data-target="#user_media_<?= $x->id;?>" class="img-responsive imgcursor" src="<?= base_url().$x->source_url; ?>"></a>
-            <?php include('image_modal.php'); ?></li>
             <?php endforeach ?>
            
               <li>
@@ -56,7 +56,10 @@
          
         </ul>
 
-        
+        <?php foreach ($user->media as $x): ?>
+        <?php $x->id = $x->random_number; ?>
+        <?php include('image_modal.php'); ?></li>
+        <?php endforeach ?>
         
       </div>
     </div>

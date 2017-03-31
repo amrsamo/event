@@ -1,6 +1,39 @@
 
 
-  
+ 
+ $("#form_rank").submit(function(){
+
+	var base_url = $("#base_url").val();
+	var user_id  = $("#user_id").val();
+	var user_rank = $("#user_rank").val();
+
+	if(user_rank == '')
+	{
+		alert('Set Rank First');
+		return;
+	}
+	
+	url = base_url+'admin/setuserrank/'+user_id+'/'+user_rank;
+	$.post(
+        url,
+        $(this).serialize(),
+        function(response){
+        	response = JSON.parse(response);
+        	if(response.success)
+        	{
+        		$("#rankform_success").html('Values updated.');
+        		$("#rankform_success").removeClass('hide');
+        		$("#rankform_fail").addClass('hide');
+        	}
+        	else
+        	{
+        		$("#rankform_fail").html('Please enter new values.');
+        		$("#rankform_fail").removeClass('hide');
+        		$("#rankform_success").addClass('hide');
+
+        	}
+        });
+});
 
 
 

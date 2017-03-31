@@ -287,6 +287,30 @@
         </div>
         <!-- /#page-wrapper -->
 
+        <div class="panel panel-default">
+              <div class="panel-heading">User Rank</div>
+              <div class="panel-body">
+                <div class="col-sm-6">
+
+                    <form id="form_rank" action="javascript:void();" method="post">
+                      <div class="top-buffer input-group">
+                      <span class="input-group-addon" id="basic-addon1">
+                                <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i>
+                        </span>
+                      <?php if ($user->rank == 100): ?>
+                        <input class="form-control" min="1" max="10" id="user_rank" type="number" name="">
+                      <?php else: ?>
+                        <input class="form-control" min="1" max="10" id="user_rank" type="number" name="" value="<?= $user->rank ?>">
+                      <?php endif ?>
+                      </div>
+                      <button type="submit" id="form-submit" class="top-buffer btn btn-success btn-md">Save</button>
+                       <div id="rankform_success" class="hide alert alert-success top-buffer"></div> 
+                       <div id="rankform_fail" class="hide alert alert-warning top-buffer"></div> 
+                    </form>
+                </div>
+              </div>
+            </div>
+
 
 <?php include('footer.php') ?>
 

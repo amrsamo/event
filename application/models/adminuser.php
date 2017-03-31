@@ -63,6 +63,7 @@ class adminuser extends Base_Model
         $this->db->where_in('user.type',$types);
         if($conditions != NULL) 
                 $this->db->where($conditions);
+        $this->db->order_by("user.rank", "asc");
         $this->db->order_by("user.creation_date", "desc");
         $this->db->limit($limit);
         $query = $this->db->get(null,null,$limit);

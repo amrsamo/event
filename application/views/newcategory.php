@@ -50,7 +50,7 @@
 
 <div class="category_users col-sm-10 col-sm-offset-1 categoryajaxcontent">
 
-
+ 
   <?php foreach ($users as $user): ?>
       <?php 
         if(empty($user->media))
@@ -94,7 +94,15 @@
 <script>
 
 
+$(".mediaModal").click(function(){
 
+  var id = $(this).attr('id');
+  var element = $("#user_media_"+id).html();
+  // alert(element);
+  // $("#user_media_"+id).modal('show'); 
+  $("#user_media_"+id).css('display','block');
+
+});
 
 
 $.fn.is_on_screen = function(){

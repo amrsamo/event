@@ -18,7 +18,7 @@
         </div>
         <div class="user_title col-sm-10">
           <h2><?= $user->username; ?></h2>
-          <span><?= $user->website; ?></span>
+          <span><a target="_blank" href="<?= $user->website; ?>"><?= $user->website; ?></a></span>
           <button class="follow_button">follow</button>
         </div>
     </div>

@@ -140,6 +140,7 @@
     
     <script src="<?= base_url(); ?>public/js/new_scripts.js"></script>
      <script src="<?= base_url(); ?>public/js/jquery.bxslider.min.js"></script>
+     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
   </body>
 </html>
 
