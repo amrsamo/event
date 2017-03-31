@@ -45,7 +45,12 @@
         </div>
         <div class="row">
           <div class="col-sm-12">
-            <img class="image-modal img-responsive" src="<?= base_url().$x->source_url; ?>">
+            <div class="image">
+                <!-- <img src="" class="img img-responsive full-width" /> -->
+                <img class="image-modal img-responsive" src="<?= base_url().$x->source_url; ?>">
+            </div>  
+
+            
           </div>
         </div>
         
