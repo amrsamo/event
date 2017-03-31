@@ -29,14 +29,14 @@
              <h2 class="nospace"><?= $x->title; ?></h2>
              <p class="nospace" ><?= $x->description; ?></p>
            </div>
-           <div class="col-sm-2 nospace pull-right">
+           <div class="col-sm-1 nospace pull-right">
              <div class="single_media_div_info">
                 <?php if ($x->like): ?>
-                    <div value="<?= $x->id; ?>" id="<?= $x->id; ?>" class="heart_div like unlikeBTN">
+                    <div value="<?= $x->id; ?>" id="<?= $x->id; ?>" class="heart_div img-responsive like unlikeBTN">
                       <p><?= $x->statistics->likes; ?></p>
                     </div>
                 <?php else: ?>
-                    <div value="<?= $x->id; ?>" id="<?= $x->id; ?>" class="heart_div unlike likeBTN">
+                    <div value="<?= $x->id; ?>" id="<?= $x->id; ?>" class="heart_div img-responsive unlike likeBTN">
                       <p><?= $x->statistics->likes; ?></p>
                     </div>
                 <?php endif ?> 
