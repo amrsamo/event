@@ -79,21 +79,21 @@
   <div class="col-sm-1">
     <img src="<?= base_url(); ?>public/images/wishbone_crop.png" height="20" width="20">
   </div>
-  <div class="col-sm-1 col-sm-offset-1">
+ <!--  <div class="col-sm-1 col-sm-offset-1">
             <span>Albums</span>
-  </div>
- <div class="col-sm-2 pull-right" style="margin-right: 3%;">
+  </div> -->
+ <!-- <div class="col-sm-2 pull-right" style="margin-right: 3%;">
      <div class="search">
         <input type="text" class="btn_header" placeholder="search media">
         <span class="line"></span>
         <span class="circle"></span>
       </div>
-  </div>
+  </div> -->
 </div>
 
 
 
-<div class="category_users col-sm-10 col-sm-offset-1 categoryajaxcontent">
+<div class="category_users usermediacontent col-sm-10 col-sm-offset-1 categoryajaxcontent">
 
 <div class="row myspacer user-media">
   <?php foreach ($media as $x): ?>

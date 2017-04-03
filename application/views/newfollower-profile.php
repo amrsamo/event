@@ -53,13 +53,13 @@
   <div class="col-sm-1 col-sm-offset-1">
             <span>following </span><p class="badge"><?= count($following); ?></p>
   </div>
- <div class="col-sm-2 pull-right" style="margin-right: 3%;">
+ <!-- <div class="col-sm-2 pull-right" style="margin-right: 3%;">
      <div class="search">
         <input type="text" class="btn_header" placeholder="search media">
         <span class="line"></span>
         <span class="circle"></span>
       </div>
-  </div>
+  </div> -->
 </div>
 
 

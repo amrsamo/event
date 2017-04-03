@@ -20,32 +20,38 @@
 
 <div class="category_filters col-sm-10 col-sm-offset-1">
   <div class="col-sm-1">
-    <span>all</span>
+    <a class="a_nostyle" href="<?= base_url(); ?>category/<?= rawurlencode($category->name) ?>">
+      <span data-target="<?= base_url(); ?>category/"> all</span>
+    </a>
     <img style="margin-left:25%" src="<?= base_url(); ?>public/images/wishbone_crop.png" height="20" width="20">
   </div>
   <?php if (isset($sub_category) && !empty($sub_category)): ?>
         <?php if (count($sub_category) > 4): ?>
           <?php foreach ($sub_category as $sub): ?>
             <div class="col-sm-2 fivesub">
-              <span><?= $sub->name; ?></span>
+              <a class="a_nostyle" href="<?= base_url(); ?>category/<?= rawurlencode($category->name) ?>?filter=<?= rawurlencode($sub->name); ?>">
+                  <span data-target="<?= base_url(); ?>category/"> . <?= $sub->name; ?></span>
+                </a>
             </div>
           <?php endforeach ?>
         <?php else: ?>
           <?php foreach ($sub_category as $sub): ?>
             <div class="col-sm-2">
-              <span><?= $sub->name; ?></span>
+             <a class="a_nostyle" href="<?= base_url(); ?>category/<?= rawurlencode($category->name) ?>?filter=<?= rawurlencode($sub->name); ?>">
+                  <span data-target="<?= base_url(); ?>category/"> . <?= $sub->name; ?></span>
+                </a>
             </div>
           <?php endforeach ?>
         <?php endif ?>
         
  <?php endif ?>
- <div class="col-sm-1 nospace pull-right" style="margin-right:%;">
+<!--  <div class="col-sm-1 nospace pull-right" style="margin-right:%;">
      <div class="search">
         <input type="text" class="btn_header" placeholder="search users">
         <span class="line"></span>
         <span class="circle"></span>
       </div>
-  </div>
+  </div> -->
 </div>
 
 <div class="category_users col-sm-10 col-sm-offset-1 categoryajaxcontent">
@@ -81,7 +87,11 @@
 
 
 
-
+<?php if (isset($sub_category_filter)): ?>
+  <input type="hidden" id="sub_category_filter" value="<?= $sub_category_filter; ?>">
+<?php else: ?>
+  <input type="hidden" id="sub_category_filter" value="none">
+<?php endif ?>
 
 
 
@@ -136,10 +146,12 @@ $(window).scroll(function(){ // bind window scroll event
         var category_id = $("#category_id").val();
         var targetURL   = $("#base_url").val()+"morecategorusers";
         var min_id       = $("#min_id").val();
+        var sub_category_filter = $("#sub_category_filter").val();
+        
         $.ajax({
           url: targetURL,
           method: "POST",
-          data: { category: category_id , min_id:min_id },
+          data: { category: category_id , min_id:min_id , sub_category_filter:sub_category_filter },
           async:false, 
           success: function(result)
               { 

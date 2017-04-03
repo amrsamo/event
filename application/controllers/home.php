@@ -72,12 +72,26 @@ class Home extends CI_Controller {
 		$getCategoryTypes = $this->Usertype->get(array('category'=> $category->id));
 		$categoryTypesArray = array();
 		foreach ($getCategoryTypes as $type) {
-			$categoryTypesArray[] = $type->id;
+			if(isset($_GET['filter']))
+			{
+				if($_GET['filter'] == $type->type_name)
+				{
+					$categoryTypesArray[] = $type->id;
+					$this->data['sub_category_filter'] = $_GET['filter'];
+					break;
+				}
+			}
+			else
+			{
+				$categoryTypesArray[] = $type->id;
+			}
+			
 			
 		}
 		
-		// printme($category);
 		// printme($getCategoryTypes);
+		// printme($categoryTypesArray);
+		// exit();
 		$users = $this->Adminuser->getUsersByType(null,$categoryTypesArray,9);
 
 		// printme($users);
@@ -183,11 +197,28 @@ class Home extends CI_Controller {
 	{
 		$category_id = $_POST['category'];
 
+		if($_POST['sub_category_filter'] != 'none' )
+		{
+			$_GET['filter'] = $_POST['sub_category_filter'];
+		}
 		// GET USERS UNDER CATEGORY
 		$getCategoryTypes = $this->Usertype->get(array('category'=> $category_id));
 		$categoryTypesArray = array();
 		foreach ($getCategoryTypes as $type) {
-			$categoryTypesArray[] = $type->id;
+			// $categoryTypesArray[] = $type->id;
+			if(isset($_GET['filter']))
+			{
+				if($_GET['filter'] == $type->type_name)
+				{
+					$categoryTypesArray[] = $type->id;
+					$this->data['sub_category_filter'] = $_GET['filter'];
+					break;
+				}
+			}
+			else
+			{
+				$categoryTypesArray[] = $type->id;
+			}
 		}
 
 		$conditions = array("user.id <"=>$_POST['min_id']);
@@ -383,44 +414,107 @@ class Home extends CI_Controller {
 	public function search()
 	{
 		
-		$this->data['search_input'] = $_POST['input'];
-		$this->data['feed'] = $this->Media->searchResultsFromMedia($_POST['input']);
-		// printme($this->data);exit();
-		$output = array();
-		foreach ($this->data['feed'] as $x) {
+		// printme($_GET);
+		// exit();	
 
-			if(isset($this->isLoggedIn) && $this->isLoggedIn)
-			{
-				$media = $x;
-				$conditions = array();
-				$conditions['follower_id'] = $this->data['loggedInFollower']->id;
-				$conditions['media_id'] = $x->media_id;
-				$media->like = $this->Follower->checkLike($conditions);
-			}
-			else
-			{
-				$media = $x;
-				$media->like = false;
-			}
+		
+		$this->data['search_input'] = $_GET['q'];
 
-			// GET MEDIA STATISTICS
-			$statistics = $this->Media_Statistics->get(array('media_id'=> $media->media_id));
-			if(empty($statistics))
-			{	
-				$statistics = new stdClass();
-				$statistics->views = 0;
-				$statistics->likes = 0;
-				$media->statistics = $statistics;
-			}
-			else
-			{
-				$media->statistics = $statistics[0];
-			}
-			$output[] = $media;
+		if($_GET['q'] == "")
+		{
+			$this->data['users'] = $this->Adminuser->searchUserResultsTop($_GET['q']);
+		}
+		else
+		{
+			$this->data['users'] = $this->Adminuser->searchUserResults($_GET['q']);
+		}
+		
+		if(count($this->data['users']) == 0)
+		{	
+			$this->data['noResults'] = true;
+			$this->data['users'] = $this->Adminuser->searchUserResultsTop($_GET['q']);
 		}
 
-		$this->data['feed'] = $output;
+		//GET USER INFO AND  PROFILE PICS
+		foreach ($this->data['users'] as $user) {
+			$picture = $this->Adminuser->getUserProfilePicture($user->user_id);
+			if(is_array($picture) && !empty($picture))
+			{
+				$picture = $picture[0];
+				$user->profile_picture = $picture;
+			}
 
+			//Get User media
+			$media = $this->Media->get(array('user_id'=> $user->user_id),null,8);
+			$media_final=array();
+			foreach ($media as $x) {
+				$random_number = mt_rand(1000000,9999999);
+				$x->random_number = $random_number;
+				$media_final[] = $x;
+			}
+			
+			$user->media = $media_final;
+			$output = array();
+			foreach ($user->media as $x) {
+
+				if(isset($this->isLoggedIn) && $this->isLoggedIn)
+				{
+					$media = $x;
+					$conditions = array();
+					$conditions['follower_id'] = $this->data['loggedInFollower']->id;
+					$conditions['media_id'] = $x->id;
+					$media->like = $this->Follower->checkLike($conditions);
+				}
+				else
+				{
+					$media = $x;
+					$media->like = false;
+				}
+
+				// GET MEDIA STATISTICS
+				$statistics = $this->Media_Statistics->get(array('media_id'=> $media->id));
+				if(empty($statistics))
+				{	
+					$statistics = new stdClass();
+					$statistics->views = 0;
+					$statistics->likes = 0;
+					$media->statistics = $statistics;
+				}
+				else
+				{
+					$media->statistics = $statistics[0];
+				}
+				$output[] = $media;
+			}
+
+			$user->media = $output;
+
+			//GET USER RELATION (FOLLOWED OR NOT)
+			if(isset($this->isLoggedIn) && $this->isLoggedIn)
+			{	
+				$conditions = array();
+				$conditions['follower_id'] = $this->data['loggedInFollower']->id;
+				$conditions['user_id'] = $user->user_id;
+				$user->relation = $this->Follower->checkRelation($conditions);
+			}
+			else
+			{
+				$user->relation = false;
+			}
+			
+			$this->data['users'][] = $user;
+		}
+
+
+		$this->data['categories'] = array();
+		$categories = $this->Category->get();
+		foreach ($categories as $category) {
+			$sub_category = $this->Category->getCategoryInfo($category->id);
+			$output = new stdClass();
+			$output->category = $category;
+			$output->sub = $sub_category;
+			$this->data['categories'][] = $output;
+		}
 
 		// printme($this->data);exit();
 

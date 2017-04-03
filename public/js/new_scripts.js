@@ -188,6 +188,13 @@ $(window).scroll(function (event) {
 
 
 
+$(".circle").click(function(){
+      
+      $("#searchForm").submit();
+
+
+});
+
 function adjustLogoWidth(x,time,top)
 {
   // TO ADJUST THE LOGO WIDTH

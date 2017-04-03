@@ -93,9 +93,11 @@
                         </div>
                         <div class="header_link_div col-sm-2 text-center nospace">
                             <div class="search">
-                              <input type="text" class="btn_header" placeholder="search..">
-                              <span class="line"></span>
-                              <span class="circle"></span>
+                              <form id="searchForm" action="<?= base_url(); ?>search" method="GET">
+                                  <input type="text" name="q" class="btn_header" placeholder="search.." required>
+                                  <span class="line"></span>
+                                  <span class="circle"></span>
+                              </form>
                             </div>
                         </div>
                     </div>
@@ -112,9 +114,11 @@
                         </div>
                         <div class="header_link_div col-sm-2 text-center nospace">
                             <div class="search">
-                              <input type="text" class="btn_header" placeholder="search..">
-                              <span class="line"></span>
-                              <span class="circle"></span>
+                              <form id="searchForm" action="<?= base_url(); ?>search" method="GET">
+                                  <input type="text" name="q" class="btn_header" placeholder="search..">
+                                  <span class="line"></span>
+                                  <span class="circle"></span>
+                              </form>
                             </div>
                         </div>
                     </div>

@@ -18,12 +18,14 @@ class Media extends Base_Model
         $this->db->join('user', 'media.user_id = user.id','inner');
         $this->db->join('profile_picture', 'media.user_id = profile_picture.user_id','inner');
         $this->db->join('user_type', 'user.type = user_type.id','inner');
-        $this->db->or_like(array('title'=>$input,'description'=>$input));
+        $this->db->or_like(array('username'=>$input,'description'=>$input));
         $this->db->order_by("media.creation_date", "desc");
         $query = $this->db->get();
        
         return ($query->result());
     }
+
+
 }
 
  ?>

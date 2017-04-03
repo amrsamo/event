@@ -12,6 +12,34 @@ class adminuser extends Base_Model
     } 
 
 
+    public function searchUserResults($input)
+    {   
+
+        $this->db->select('* , user_type.id as type_id , user.id as user_id');
+        $this->db->from('user');
+        $this->db->join('user_type', 'user.type = user_type.id','inner');
+        $this->db->where('type !=', '6');
+        $this->db->where('(`username` LIKE \'%'.$input.'%\'  OR `first_name` LIKE \'%'.$input.'%\' OR `last_name` LIKE \'%'.$input.'%\')', NULL, FALSE);
+        // $this->db->where('type !=','6');
+        // $this->db->or_like(array('username'=>$input,'bio'=>$input,'first_name'=>$input,'last_name'=>$input));
+        $query = $this->db->get();
+       
+        return ($query->result());
+    }
+
+     public function searchUserResultsTop()
+    {   
+
+        $this->db->select('* , user_type.id as type_id , user.id as user_id');
+        $this->db->from('user');
+        $this->db->join('user_type', 'user.type = user_type.id','inner');
+        $this->db->where('type !=', '6');
+        $this->db->order_by("user.rank", "asc");
+        $this->db->limit(20);
+        $query = $this->db->get();
+       
+        return ($query->result());
+    }
 
     public function getUserByUsername($username)
     {

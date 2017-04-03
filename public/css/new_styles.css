@@ -944,7 +944,26 @@ a:hover {
   width: 20px !important;
 }
 
-.heart_div{
+.a_nostyle{
+  color:white;
+}
+
+.a_nostyle:hover{
+  text-decoration: none;
+  color:white;
+}
+
+.usermediacontent .heart_div{
+  width:10%;
+  height:40px;
+  color: white;
+  padding-top: 2%;
+  text-align: center;
+  background-image: url('../images/heart.png');
+  background-size: 100% 100%;
+}
+
+.modal-body .heart_div{
   width:50%;
   height:40px;
   color: white;
@@ -1481,6 +1500,7 @@ nav ul li:hover ul.fallback {display:block;padding-left: 0px;}
     width: 35px;
     border-radius: 50%;
     border: 4px solid white;
+    cursor: pointer;
 }
 
 #arrow_left
