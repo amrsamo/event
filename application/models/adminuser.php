@@ -12,6 +12,40 @@ class adminuser extends Base_Model
     } 
 
 
+
+    public function getTrendingUsers()
+    {
+        $this->db->select('* , user_type.id as type_id , user.id as user_id');
+        $this->db->from('user');
+        $this->db->join('user_type', 'user.type = user_type.id','inner');
+        $this->db->join('profile_picture', 'user.id = profile_picture.user_id','inner');
+        $this->db->where('trending', '1');
+        $this->db->limit(10);
+
+        
+        // $this->db->where('type !=','6');
+        // $this->db->or_like(array('username'=>$input,'bio'=>$input,'first_name'=>$input,'last_name'=>$input));
+        $query = $this->db->get();
+        
+        $result = $query->result();
+        if(is_array($result) && count($result) > 0)
+        {
+            return $result;
+        }
+        else
+        {
+            $this->db->select('* , user_type.id as type_id , user.id as user_id');
+            $this->db->from('user');
+            $this->db->join('user_type', 'user.type = user_type.id','inner');
+            $this->db->join('profile_picture', 'user.id = profile_picture.user_id','inner');
+            $this->db->order_by("user.rank", "asc");
+            $this->db->limit(10);
+            $query = $this->db->get();
+            $result = $query->result();
+            return $result;
+        }
+    }
+
     public function searchUserResults($input)
     {   
 

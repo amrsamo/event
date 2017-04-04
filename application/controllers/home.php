@@ -38,6 +38,19 @@ class Home extends CI_Controller {
 			$output->sub = $sub_category;
 			$this->data['categories'][] = $output;
 		}
+
+		$this->data['trending'] = $this->Adminuser->getTrendingUsers();
+		$output = array();
+		foreach ($this->data['trending'] as $user) {
+			$media = $this->Media->get(array('user_id'=> $user->user_id),null,1);
+			$x = new stdClass();
+			$x = $user;
+			$x->media = $media;
+			$output[] = $x;
+		}
+		$this->data['trending'] = $output;
+
+
 		// printme($this->data);
 		// exit();
 		$this->load->view('newhome',$this->data);

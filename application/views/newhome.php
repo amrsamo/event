@@ -220,26 +220,33 @@
       </ol>
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
-          <div class="item active">
-            <img src="<?= base_url(); ?>public/images/andreas-ronningen-29698.jpg" alt="First slide">
-                    <!-- Static Header -->
-                    <div class="header-text hidden-xs">
-                        <div class="row">
-                          <div class="col-sm-4 text-center nospace">
-                              <img class=" img-responsive" src="<?= base_url(); ?>public/images/profile1.jpg">
+          <?php $count=0; ?>
+          <?php foreach ($trending as $user): ?>
+            <div class="item <?php if($count == 0 ) echo 'active'; ?>">
+              <img src="<?= base_url().$user->media[0]->source_url; ?>" ">
+                      <!-- Static Header -->
+                      <a href="<?= base_url(); ?>user/<?= $user->username; ?>">
+                        <div class="header-text hidden-xs">
+                          <div class="row">
+                            <div class="col-sm-10 text-center nospace">
+                                <img class="img-circle img-responsive" src="<?= base_url().$user->source_url; ?>">
+                            </div>
+                            <!-- <div class="col-sm-6 pull-right">
+                              <button class="btn_header">Go To Profile</button>
+                            </div> -->
                           </div>
-                          <div class="col-sm-6 pull-right">
-                            <button class="btn_header">Go To Profile</button>
+                          <div class="row">
+                            <div class="col-sm-12 nospace text-center">
+                              <h2><?= $user->username; ?></h2>
+                              <span><?= $user->type_name ?></span>
+                            </div>
                           </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-sm-12 nospace">
-                            <h2>Davenport_Quinn</h2>
-                            <span>Photographer</span>
-                          </div>
-                        </div>
-                    </div><!-- /header-text -->
-          </div>
+                      </div><!-- /header-text -->
+                      </a>
+            </div>
+            <?php $count++; ?>
+          <?php endforeach ?>
+          
       </div>
       <!-- Controls -->
       <!-- <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
