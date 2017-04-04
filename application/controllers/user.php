@@ -301,7 +301,7 @@ class User extends CI_Controller {
 			$data = array();
 			$data['user_id'] =  $user_id;
 			$data['url'] = $url;
-			// $this->Video->put($data);
+			$this->Video->put($data);
 		}
 
 		print json_encode( array('success' => true, 'message' => "Values updated." ) );

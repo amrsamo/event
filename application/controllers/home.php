@@ -359,7 +359,7 @@ class Home extends CI_Controller {
 
 		//GET USER VIDEOS
 		$this->data['videos'] = $this->Video->get(array('user_id'=> $this->data['user']->user_id));
-
+		
 
 		// printme($this->data);
 		// exit();

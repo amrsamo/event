@@ -79,7 +79,7 @@
   <div class="col-sm-1">
     <img src="<?= base_url(); ?>public/images/wishbone_crop.png" height="20" width="20">
   </div>
-  <?php if (is_array($videos)): ?>
+  <?php if (is_array($videos) && count($videos) > 0): ?>
     <div class="col-sm-1 col-sm-offset-1">
         <a class="a_nostyle" href="<?= base_url(); ?>user/<?= rawurlencode($user->username) ?>?filter=videos"><span>videos</span></a>
     </div>
