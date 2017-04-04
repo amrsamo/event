@@ -35,7 +35,37 @@
         });
 });
 
+$("#savevideos_Btn").click(function(){
 
+	if($(".video_q").length == 0)
+	{
+		alert('Enter Videos URL/S First');
+		return;
+	}
+
+	var urls = [];
+	var base_url = $("#base_url").val();
+	var user_id  = $("#user_id").val();
+
+	$(".video_q").each(function(){
+
+		var url = $(this).html();
+		urls.push(url);
+	});
+
+	url = base_url+'admin/addvideos/';
+	
+		$.ajax({
+		   type: "POST",
+		   data: {urls:urls,user_id:user_id},
+		   url:url,
+		   success: function(msg){
+		     $("#addvideos_success").html('Videos Updated Successfully.');
+        	 $("#addvideos_success").removeClass('hide');
+		   }
+		});
+
+});
 
 
 $("#form_social").submit(function(){

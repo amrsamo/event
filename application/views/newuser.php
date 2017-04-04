@@ -74,11 +74,16 @@
 
 <div class="category_filters col-sm-10 col-sm-offset-1">
   <div class="col-sm-1">
-    <span>all</span>
+    <a class="a_nostyle" href="<?= base_url(); ?>user/<?= rawurlencode($user->username) ?>"><span>all</span></a>
   </div>
   <div class="col-sm-1">
     <img src="<?= base_url(); ?>public/images/wishbone_crop.png" height="20" width="20">
   </div>
+  <?php if (is_array($videos)): ?>
+    <div class="col-sm-1 col-sm-offset-1">
+        <a class="a_nostyle" href="<?= base_url(); ?>user/<?= rawurlencode($user->username) ?>?filter=videos"><span>videos</span></a>
+    </div>
+  <?php endif ?>
  <!--  <div class="col-sm-1 col-sm-offset-1">
             <span>Albums</span>
   </div> -->
@@ -96,7 +101,24 @@
 <div class="category_users usermediacontent col-sm-10 col-sm-offset-1 categoryajaxcontent">
 
 <div class="row myspacer user-media">
-  <?php foreach ($media as $x): ?>
+
+<?php if (isset($_GET['filter']) && $_GET['filter'] == 'videos'): ?>
+
+  <?php foreach ($videos as $video): ?>
+    <?php 
+      $video_id = explode('v=', $video->url);
+      $video_id = $video_id[1];
+     ?>
+    <div class="col-sm-4">
+      <iframe width="420" height="315" src="https://www.youtube.com/embed/<?= $video_id; ?>">
+      </iframe>
+    </div>
+  <?php endforeach ?>
+
+
+<?php else: ?>
+
+ <?php foreach ($media as $x): ?>
 
       <div class="col-sm-4 single_media_div nospace">
         <a class="mediaModal" id="<?= $x->id;?>" href="<?= base_url().$x->source_url; ?>" data-title="A random title" data-footer="A custom footer text" data-gallery="example-gallery" >
@@ -116,6 +138,10 @@
       </div>
       <?php include('image_modal.php'); ?>
     <?php endforeach ?>
+
+<?php endif ?>
+
+ 
 </div>
 
 

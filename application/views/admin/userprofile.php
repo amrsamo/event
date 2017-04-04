@@ -312,6 +312,86 @@
             </div>
 
 
+            <div class="panel panel-default">
+              <div class="panel-heading">Videos</div>
+              <div class="panel-body">
+                <div class="col-sm-6">
+
+                      <div class="top-buffer input-group">
+                      <span class="input-group-addon" id="basic-addon1">
+                                <i class="fa fa-2x fa-youtube" aria-hidden="true"></i>
+                        </span>
+                        <input style="padding:25px;" class="form-control" id="addvideo_input" type="url" name="">
+                      </div>
+                      <button type="button" id="addvideo_Btn" class="top-buffer btn btn-default btn-md">Add</button>
+
+
+                       
+                       <div id="rankform_success" class="hide alert alert-success top-buffer"></div> 
+                       <div id="rankform_fail" class="hide alert alert-warning top-buffer"></div> 
+                </div>
+                <div class="col-sm-6">
+                  <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th>Videos URL/s</th>
+                                  </tr>
+                                </thead>
+                                <tbody id="videos_table">
+                                <?php if (isset($user_videos)): ?>
+                                    <?php if (is_array($user_videos)): ?>
+                                        <?php foreach ($user_videos as $x): ?>
+                                          <tr>
+                                            <td><?= $x->url ?></td>
+                                          </tr>   
+                                        <?php endforeach ?>
+                                    <?php endif ?>
+                                <?php endif ?>
+                                </tbody>
+                    </table>
+                    <button type="button" id="savevideos_Btn" class="top-buffer btn btn-success btn-md">Save</button>
+                </div>
+                <div class="col-sm-12 row clearfix" style="margin-top: 2%;">
+                  <div id="addvideos_success" class="hide alert alert-success"></div>
+                </div>
+              </div>
+            </div>
+
+
 <?php include('footer.php') ?>
 
     
+<script type="text/javascript">
+  
+$("#addvideo_Btn").click(function(){
+  
+
+  var url = $("#addvideo_input").val();
+  if(url == "")
+  {
+    alert('Please add video url');
+    return;
+  }
+
+  if(checkUrl(url) == null)
+  {
+    alert('Please enter a valid URL');
+    return;
+  }
+
+  var html = "<tr><td class='video_q'>"+url+"</td></tr>";
+  $("#videos_table").append(html);
+
+
+     
+});
+
+
+
+function checkUrl(url){
+    return url.match(/(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/);
+}
+
+
+
+</script>

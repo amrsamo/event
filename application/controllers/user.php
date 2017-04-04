@@ -222,7 +222,8 @@ class User extends CI_Controller {
 				$user->profile_picture = base_url().$profile_picture[0]->source_url;
 
 
-			
+			//GET USER VIDEOS
+			$data['user_videos'] = $this->Video->get(array('user_id'=>$user->id),null,5000,0);
 
 
 			//Get User Social Networks
@@ -279,6 +280,26 @@ class User extends CI_Controller {
 	}
 
 
+
+	public function addvideos()
+	{
+		printme($_POST);
+		$user_id = $_POST['user_id'];
+
+		$urls = $_POST['urls'];
+		$urls = array_unique($urls);
+
+		foreach ($urls as $url) {
+			$data = array();
+			$data['user_id'] =  $user_id;
+			$data['url'] = $url;
+			// $this->Video->put($data);
+		}
+
+		print json_encode( array('success' => true, 'message' => "Values updated." ) );
+		exit();
+
+	}
 	public function setuserrank($id,$rank)
 	{
 		$process = $this->Adminuser->update(array('rank'=>$rank),array('id'=>$id));

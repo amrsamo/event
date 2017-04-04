@@ -344,6 +344,12 @@ class Home extends CI_Controller {
 		$this->data['media'] = $this->Media->get(array('user_id'=> $this->data['user']->user_id));
 
 
+		//GET USER VIDEOS
+		$this->data['videos'] = $this->Video->get(array('user_id'=> $this->data['user']->user_id));
+
+
+		// printme($this->data);
+		// exit();
 		//GET USER LIKES (LIKED OR NOT) AND MEDIA STATISTICS
 		$output = array();
 		foreach ($this->data['media'] as $x) {
