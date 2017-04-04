@@ -281,6 +281,14 @@ class User extends CI_Controller {
 
 
 
+
+	public function setusertrending()
+	{
+		$process = $this->Adminuser->update(array('trending'=>$_POST['trending']),array('id'=>$_POST['user_id']));
+		print json_encode( array('success' => true, 'message' => "Values updated." ) );
+		exit();
+	}
+
 	public function addvideos()
 	{
 		printme($_POST);

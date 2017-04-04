@@ -358,6 +358,32 @@
             </div>
 
 
+             <div class="panel panel-default">
+              <div class="panel-heading">Trending</div>
+              <div class="panel-body">
+                <div class="col-sm-6">
+                      <div class="top-buffer input-group">
+                      <span class="input-group-addon" id="basic-addon1">
+                                <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                        </span>
+
+                      <input type="checkbox" class="form-control" id="trending_input" 
+                      <?php 
+                        if($user->trending == 1)
+                          echo 'value="1" checked';
+                        else
+                          echo 'value="0"';
+                      ?> 
+                      >
+                      </div>
+                      <button type="submit" id="trending-submit" class="top-buffer btn btn-success btn-md">Save</button>
+                       <div id="trendingform_success" class="hide alert alert-success top-buffer"></div> 
+                       <div id="trendingform_fail" class="hide alert alert-warning top-buffer"></div> 
+                </div>
+              </div>
+            </div>
+
+
 <?php include('footer.php') ?>
 
     

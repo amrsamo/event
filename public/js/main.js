@@ -1,4 +1,35 @@
+$("#trending-submit").click(function(){
 
+	var base_url = $("#base_url").val();
+	var user_id  = $("#user_id").val();
+	var trending = $("#trending_input").val();
+
+
+	url = base_url+'admin/setusertrending/';
+	
+		$.ajax({
+		   type: "POST",
+		   data: {user_id:user_id,trending:trending},
+		   url:url,
+		   success: function(msg){
+		     $("#trendingform_success").html('Videos Updated Successfully.');
+        	 $("#trendingform_success").removeClass('hide');
+		   }
+		});
+
+
+});
+
+$("#trending_input").click(function(){
+
+
+	if($("#trending_input").prop('checked') == true)
+	    $("#trending_input").val('1');
+	else
+	    $("#trending_input").val('0');
+
+
+});
 
  
  $("#form_rank").submit(function(){
