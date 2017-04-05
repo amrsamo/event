@@ -70,7 +70,7 @@
 
 </div>
 
-<div class="row load-more load-element text-center">
+<div class="row col-sm-10 col-sm-offset-1 load-more load-element text-center">
       <input type="hidden" id="category_id" value="<?= $category->id; ?>">
       <?php if (isset($min_id)): ?>
         <input type="hidden" id="min_id" value="<?= $min_id; ?>">

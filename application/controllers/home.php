@@ -357,6 +357,20 @@ class Home extends CI_Controller {
 		$this->data['media'] = $this->Media->get(array('user_id'=> $this->data['user']->user_id));
 
 
+
+		//GET USER RELATION (FOLLOWED OR NOT)
+		if(isset($this->isLoggedIn) && $this->isLoggedIn)
+		{	
+			$conditions = array();
+			$conditions['follower_id'] = $this->data['loggedInFollower']->id;
+			$conditions['user_id'] = $this->data['user']->user_id;
+			$user->relation = $this->Follower->checkRelation($conditions);
+		}
+		else
+		{
+			$user->relation = false;
+		}
+
 		//GET USER VIDEOS
 		$this->data['videos'] = $this->Video->get(array('user_id'=> $this->data['user']->user_id));
 		

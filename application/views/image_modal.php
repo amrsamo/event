@@ -1,30 +1,52 @@
 <!-- Modal -->
-<div class="modal  fade" id="user_media_<?= $x->id;?>" role="dialog">
+<div class="imageModal modal fade" id="user_media_<?= $x->id;?>" role="dialog">
   <div class="modal-dialog">
   
     <!-- Modal content-->
     <div class="modal-content">
-      <!-- <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">
-          <div class="row">
-            <div class="col-sm-12">
-              <div>
-                <a href="javascript:void(0)" style="text-decoration: none;cursor:default">
-                <?= $x->title; ?>
-                </a>
-              </div>
-              
-             
+      <div class="modal-header">
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-1">
+            <div class="col-sm-4 text-center">
+              <a href="">
+                <p><?= $user->username; ?></p>
+                <div class="col-sm-2 col-sm-offset-5">
+                  <img class="img-responsive img-circle" src="<?= base_url().$user->profile_picture->source_url; ?>">
+                </div>
+              </a>
             </div>
+            <div class="col-sm-2">
+              <!-- <p>Like</p> -->
+              <?php if ($x->like): ?>
+                    <div value="<?= $x->id; ?>" id="<?= $x->id; ?>" class="col-sm-2 heart_div img-responsive like unlikeBTN">
+                      <!-- <p><?= $x->statistics->likes; ?></p> -->
+                    </div>
+                    <p><?= $x->statistics->likes; ?></p>
+                <?php else: ?>
+                    <div value="<?= $x->id; ?>" id="<?= $x->id; ?>" class="col-sm-2 heart_div img-responsive unlike likeBTN">
+                      <!-- <p><?= $x->statistics->likes; ?></p> -->
+                    </div>
+                    <p style="clear:both;"><?= $x->statistics->likes; ?></p>
+                <?php endif ?>
+            </div>
+
+             <div class="col-sm-2">
+              <!-- <p>Views</p> -->
+              <div class="col-sm-4">
+                <i style="font-size: 140%;" class="fa  fa-eye" aria-hidden="true"></i>
+                <p>120</p>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <h2><a href="javascript:void(0);" data-dismiss="modal">&times;Close</a></h2>
+            </div>
+
           </div>
-        </h4>
-      </div> -->
+        </div>
+      </div>
       <div class="modal-body">
-      <div class="row modal-hover nospace">
-           <div class="col-sm-1">
-             <!-- <img class="img-responsive img-circle" src="<?= base_url().$user->profile_picture->source_url; ?>"> -->
-           </div>
+      <!-- <div class="row modal-hover nospace">
+           
            <div class="col-sm-8 nospace">
              <h2 class="nospace"><?= $x->title; ?></h2>
              <p class="nospace" ><?= $x->description; ?></p>
@@ -42,22 +64,14 @@
                 <?php endif ?> 
               </div>
            </div>
-        </div>
+        </div> -->
         <div class="row">
           <div class="col-sm-12">
-            <div class="image">
-                <!-- <img src="" class="img img-responsive full-width" /> -->
-                <img class="image-modal img-responsive" src="<?= base_url().$x->source_url; ?>">
-            </div>  
-
-            
+                <img style="width:100%;height:auto;" src="<?= base_url().$x->source_url; ?>">
           </div>
         </div>
         
       </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div> -->
     </div>
     
   </div>

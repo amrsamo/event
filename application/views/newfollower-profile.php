@@ -13,10 +13,10 @@
 <div class="col-sm-10 col-sm-offset-1 user_profile">
     
     <div class="row nospace">
-        <div class="col-sm-2 nospace">
+        <!-- <div class="col-sm-2 nospace">
           <img class="img-responsive img-circle" src="<?= base_url(); ?>public/images/usernotfound.jpg">
-        </div>
-        <div class="user_title col-sm-10">
+        </div> -->
+        <div class="user_title col-sm-10 col-sm-offset-2">
           <h2><?= $follower->username; ?></h2>
           <span><?= $follower->first_name.' '.$follower->last_name; ?></span>
         </div>

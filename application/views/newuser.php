@@ -19,7 +19,13 @@
         <div class="user_title col-sm-10">
           <h2><?= $user->username; ?></h2>
           <span><a target="_blank" href="<?= $user->website; ?>"><?= $user->website; ?></a></span>
-          <button class="follow_button">follow</button>
+          <button style="<?= ($user->relation)? '' : 'display:none;' ; ?>" value="<?= $user->user_id; ?>" id="unfollow_<?= $user->user_id; ?>" class="unfollowBTN btn_follow follow_button">
+              following
+         </button>
+
+         <button style="<?= ($user->relation)? 'display:none;' : '' ; ?>" value="<?= $user->user_id; ?>" id="follow_<?= $user->user_id; ?>" class="followBTN btn_follow follow_button">
+            follow
+         </button>
         </div>
     </div>
 
