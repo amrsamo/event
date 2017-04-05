@@ -67,7 +67,7 @@
         </div> -->
         <div class="row">
           <div class="col-sm-12">
-                <img style="width:100%;height:auto;" src="<?= base_url().$x->source_url; ?>">
+                <img style="max-width:100%;height:auto;" src="<?= base_url().$x->source_url; ?>">
           </div>
         </div>
         
