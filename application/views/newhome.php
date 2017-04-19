@@ -3,38 +3,52 @@
 
 <input type="hidden" id="homepage" value="1">
 <section class="container-fluid" id="landing" style="background-color: rgba(0,0,0,0.3);">
-    <div class="v-center landing_content" style="margin-top: 27%;">
+
+
+    <div class="row visible-xs col-xs-6 col-xs-offset-3 xs_logo">
+      <a class="navbar-brand brand" href="#section1" style="padding-top: 0px;">
+          <img class="img-responsive" src="<?= base_url(); ?>public/images/logo circle green.png">
+      </a>
+    </div>
+    <div class="v-center landing_content col-xs-12" style="margin-top: 24%;">
         <h2 style="font-family: 'Nixie';font-weight:900;font-size: 300%;letter-spacing: 0px;" class="text-center">YOU KNOW BEST HOW TO PLAN</h2>
     </div>
 
     <!-- LANDING SOCIAL -->
     <div class="landing_social">
-      <div class="col-sm-2">
-        <img class="img-responsive" src="<?= base_url(); ?>public/images/icons/fb_w.png">
+      <div class="col-sm-2 col-xs-2">
+        <!-- <img class="img-responsive" src="<?= base_url(); ?>public/images/icons/fb_w.png"> -->
+        <a href="">
+          <i class="fa fa-2x fa-facebook-square" aria-hidden="true"></i>
+        </a>
       </div>
-      <div class="col-sm-2">
-        <img class="img-responsive" src="<?= base_url(); ?>public/images/icons/insta_w.png">
+      <div class="col-sm-2 col-xs-2">
+        <!-- <img class="img-responsive" src="<?= base_url(); ?>public/images/icons/insta_w.png"> -->
+        <a href="">
+          <i class="fa fa-2x fa-instagram" aria-hidden="true"></i>
+        </a>
       </div>
-      <div class="col-sm-2">
-        <img class="img-responsive" src="<?= base_url(); ?>public/images/icons/pinterest_w.png">
+      <div class="col-sm-2 col-xs-2">
+        <a href="">
+          <i class="fa fa-2x fa-google-plus-square" aria-hidden="true"></i>
+        </a>
       </div>
-      <div class="col-sm-2">
-        <img class="img-responsive" src="<?= base_url(); ?>public/images/icons/snapch_w.png">
-      </div>
-      <div class="col-sm-2 tel">
-        <img class="img-responsive" src="<?= base_url(); ?>public/images/icons/tel_w.png">
+      <div class="col-sm-2 col-xs-2">
+        <a href="">
+          <i class="fa fa-2x fa-phone-square" aria-hidden="true"></i>
+        </a>
       </div>
     </div>
 
     <!-- LANDING BUTTONS -->
-    <div class="landing_btns">
+    <!-- <div class="landing_btns">
       <div class="col-sm-5">
         <button class=" btn_header" >Sign up for free</button>
       </div>
       <div class="col-sm-5">
         <button class=" btn_header" >Sign up for free</button>
       </div>
-    </div>
+    </div> -->
 
 </section>
 
@@ -72,43 +86,47 @@
 
 
 <div class="newbanner text-center" id="about">
-  <span>
-    ABOUT
-  </span>
-    <p>Nobody should convince you they know better. When it comes to your very own event, You might just need some guidance and hints. Thats's all !!</p>
+  <div class="row">
+    <span>
+      ABOUT
+    </span>
+  </div>
+    <div class="col-sm-8 col-sm-offset-2 about_sub">
+      <p>Nobody should convince you they know better. When it comes to your very own event, You might just need some guidance and hints. Thats's all !!</p>
+    </div>
 </div>
 
 <section class="container-fluid"  style="min-height: 0px;">
   <div class="section-white-content">
       <div class="row" style="padding-top:0px;">
-          <div class="col-sm-4" style="text-align: center;">
+          <div class="col-sm-4 col-xs-12" style="text-align: center;">
             <p class="header-md">FOLLOWER</p>
-            <p class="about_desc col-sm-12" style="font-size:1.2em;color:#777">
+            <p class="about_desc col-sm-12 col-xs-12" style="">
               If you like to follow the scene in Egypt and what's trending regarding the events, <a href="">Eventopic</a> can get you all the information you need in one place. 
             </p>
           </div>
-          <div class="col-sm-4" style="text-align: center;">
+          <div class="col-sm-4 col-xs-12" style="text-align: center;">
             <p class="header-md">TALENT</p>
-            <p class="about_desc col-sm-12" style="font-size:1.2em;color:#777">
+            <p class="about_desc col-sm-12" style="">
               Add your portfolio and show your talent on <a href="">Eventopic</a>, The one place that has it all ;) 
             </p>
           </div>
-          <div class="col-sm-4" style="text-align: center;">
+          <div class="col-sm-4 col-xs-12" style="text-align: center;">
             <p class="header-md">VENUE</p>
-            <p class="about_desc col-sm-12" style="margin-top:5%;font-size:1.2em;color:#777">
+            <p class="about_desc col-sm-12" style="">
               Are you interested in renting your venue for events? Add your portfolio on <a href="">Eventopic</a> and get more requests every day.
             </p>
           </div>
 
-          <div class="col-sm-12 text-center luckysigns_btn animated infinite bounce" style="margin-top:5%;">
-            <img class="img-responsive" style="width:22%;margin:0 auto;" src="<?= base_url();?>public/images/luckysigns.jpg">
+          <div class="col-sm-4 text-center luckysigns_btn animated infinite bounce" style="margin-top:5%;">
+            <img class="img-responsive" style="margin:0 auto;" src="<?= base_url();?>public/images/luckysigns.jpg">
           </div>
 
 
           <div class="luckysigns_div col-sm-10 col-sm-offset-1">
             <div class="row">
 
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-4">
                   <div class="col-sm-4 col-sm-offset-4">
                     <img class=" img-responsive" src="<?= base_url();?>public/images/signs/4leaveclover.png">
                   </div>
@@ -117,7 +135,7 @@
                   </div>
                 </div>
 
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-4">
                   <div class="col-sm-4 col-sm-offset-4">
                     <img class=" img-responsive" src="<?= base_url();?>public/images/signs/wishbone.png">
                   </div>
@@ -126,7 +144,7 @@
                   </div>
                 </div>
 
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-4">
                   <div class="col-sm-4 col-sm-offset-4">
                     <img class=" img-responsive" src="<?= base_url();?>public/images/signs/ladybird.png">
                   </div>
@@ -140,7 +158,7 @@
 
             <div class="row">
 
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-4">
                   <div class="col-sm-4 col-sm-offset-4">
                     <img class=" img-responsive" src="<?= base_url();?>public/images/signs/dreamcatcher.png">
                   </div>
@@ -149,7 +167,7 @@
                   </div>
                 </div>
 
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-4">
                   <div class="col-sm-4 col-sm-offset-4">
                     <img class=" img-responsive" src="<?= base_url();?>public/images/signs/barnstar.png">
                   </div>
@@ -158,7 +176,7 @@
                   </div>
                 </div>
 
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-4">
                   <div class="col-sm-4 col-sm-offset-4">
                     <img class=" img-responsive" src="<?= base_url();?>public/images/signs/horseshoe.png">
                   </div>
@@ -171,7 +189,7 @@
 
             <div class="row">
 
-                <div class="col-sm-4 col-sm-offset-4">
+                <div class="col-sm-4  col-sm-offset-4 col-xs-4 col-xs-offset-4">
                   <div class="col-sm-4 col-sm-offset-4">
                     <img class=" img-responsive" src="<?= base_url();?>public/images/signs/fish.png">
                   </div>
@@ -268,9 +286,9 @@
 
 <section class="container-fluid container-nofull" id="contact" style="min-height: 0%;margin-bottom: 5%;">
     <div class="white">
-            <div class="col-md-12">
+            <div class="col-md-12 col-xs-12">
                 <div class="newbanner text-center">
-                  <h2 style="font-size: 200%;">
+                  <h2 style="text-align: center;">
                     CONTACT
                   </h2>
                 </div>

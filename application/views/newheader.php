@@ -27,9 +27,10 @@
 
        
 <input type="hidden" id="base_url" value="<?= base_url(); ?>">  
+    
 
   
-    <nav class="navbar navbar-trans navbar-fixed-top" role="navigation" style="visibility: hidden">
+    <nav class="hidden-xs   navbar navbar-trans navbar-fixed-top" role="navigation" style="visibility: hidden">
     <div class="wide-container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
@@ -41,7 +42,7 @@
             
         </div>
         <div class="navbar-collapse collapse" id="navbar-collapsible" >
-            <div class="col-sm-5 nospace nav navbar-nav navbar-left nospace">
+            <div class="hidden-xs col-sm-5 nospace nav navbar-nav navbar-left nospace">
                 <div class="left_header_content" style="height:40px;background-color:black !important;color: white;">
                     <div class="header_link_div big_header header_hover col-sm-3 text-center">
                         <a href="#landing">home</a>
@@ -49,7 +50,7 @@
                     <div class="header_link_div big_header categories_header_link col-sm-3 text-center">
                         <a href="#categories">categories</a>
                     </div>
-                    <div id="sub_category_id"class="sub_category col-sm-12">
+                    <div id="sub_category_id" class="sub_category col-sm-12">
                             <?php foreach ($categories as $x): ?>
                                 <div class="col-sm-12 nospace">
                                     <a href="<?= base_url().'category/'.rawurlencode($x->category->name); ?>">
@@ -66,16 +67,16 @@
                     </div>
                 </div>
             </div>
-            <div id="arrow_left"></div>
-            <div class="brand-div col-sm-2 nospace">
+            <div class="hidden-xs" id="arrow_left"></div>
+            <div class="hidden-xs brand-div col-sm-2 nospace">
                 <a class="navbar-brand brand" href="#section1" style="padding-top: 0px;">
                     <img class="img-responsive" src="<?= base_url(); ?>public/images/logo circle green.png">
                 </a>
             </div>
             
 
-            <div id="arrow_right"></div>
-            <div class="col-sm-5 nospace nav navbar-nav navbar-left nospace">
+            <div class="hidden-xs" id="arrow_right"></div>
+            <div class="hidden-xs col-sm-5 nospace nav navbar-nav navbar-left nospace">
                 <?php if ($isLoggedIn): ?>
                     <div class="left_header_content" style="height:40px;background-color:black !important;color: white;">
                         <div class="header_link_div header_hover big_header col-sm-3 text-center" style="margin-right: 50px;">
@@ -127,6 +128,19 @@
             </div>
 
 
+           <!--  <ul class="visible-xs nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Page 1-1</a></li>
+                    <li><a href="#">Page 1-2</a></li>
+                    <li><a href="#">Page 1-3</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Page 2</a></li>
+                <li><a href="#">Page 3</a></li>
+              </ul> -->
            
 
          
@@ -136,3 +150,5 @@
         </div>
     </div>
 </nav>
+
+

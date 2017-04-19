@@ -1,21 +1,28 @@
 <section class="container-fluid" id="section7">
-    <div class="row">
+    <div class="row footer_social">
         <!--fontawesome icons-->
-        <div class="col-sm-6 col-sm-offset-3">
-          <div class="col-sm-2 col-sm-offset-1">
-            <img class="img-responsive fb_image" src="<?= base_url(); ?>public/images/icons/fb_w.png" >
+        <div class="col-sm-6 col-sm-offset-4 col-xs-10 col-xs-offset-2">
+          <div class="col-sm-2 col-xs-2">
+            <!-- <img class="img-responsive" src="<?= base_url(); ?>public/images/icons/fb_w.png"> -->
+            <a href="">
+              <i class="fa fa-3x fa-facebook-square" aria-hidden="true"></i>
+            </a>
           </div>
-          <div class="col-sm-2">
-            <img class="img-responsive" src="<?= base_url(); ?>public/images/icons/insta_w.png" >
+          <div class="col-sm-2 col-xs-2">
+            <!-- <img class="img-responsive" src="<?= base_url(); ?>public/images/icons/insta_w.png"> -->
+            <a href="">
+              <i class="fa fa-3x fa-instagram" aria-hidden="true"></i>
+            </a>
           </div>
-          <div class="col-sm-2">
-            <img class="img-responsive" src="<?= base_url(); ?>public/images/icons/snapch_w.png" >
+          <div class="col-sm-2 col-xs-2">
+            <a href="">
+              <i class="fa fa-3x fa-google-plus-square" aria-hidden="true"></i>
+            </a>
           </div>
-          <div class="col-sm-2">
-            <img class="img-responsive" src="<?= base_url(); ?>public/images/icons/pinterest_w.png" >
-          </div>
-          <div class="col-sm-2">
-            <img class="img-responsive tel_image" src="<?= base_url(); ?>public/images/icons/tel_w.png" >
+          <div class="col-sm-2 col-xs-2">
+            <a href="">
+              <i class="fa fa-3x fa-phone-square" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
     </div>
