@@ -268,7 +268,7 @@ html,body {
 
 .category_filters{
   background-color: black;
-  height:50px;
+  min-height:50px;
   color:white;
   padding-top: 0.5%;
   font-size: 120%;
@@ -809,6 +809,23 @@ a:hover {
     .landing_social{
       width:90% !important;
       margin-left:15%;
+    }
+
+    .sub_category_div{
+      margin-bottom: 4%;
+      margin-left: 2%;
+    }
+    .category_filters{
+      min-height: 80px;
+      padding-top: 2%;
+    }
+
+    .category_user_div_name p{
+      margin-bottom: 3% !important;
+    }
+
+    .usermediacontent{
+      border:1px solid white;
     }
 }
 

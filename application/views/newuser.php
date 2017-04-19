@@ -65,7 +65,7 @@
         <div class="col-sm-2 col-xs-2 contacts_section">
           <?php if (isset($social)): ?>
             <?php foreach ($social as $x): ?>
-              <div class="col-sm-12 col-xs-10 nospace">
+              <div class="col-sm-12 col-xs-12 nospace">
                 <a href="<?= $x->link; ?>">
                   <img class="img-responsive"  src="<?= base_url(); ?>public/images/landing/<?= $x->image; ?>">
                 </a>
@@ -79,14 +79,14 @@
 
 
 <div class="category_filters col-sm-10 col-sm-offset-1">
-  <div class="col-sm-1">
+  <div class="col-sm-1 col-xs-1">
     <a class="a_nostyle" href="<?= base_url(); ?>user/<?= rawurlencode($user->username) ?>"><span>all</span></a>
   </div>
-  <div class="col-sm-1">
+  <div class="col-sm-1 col-xs-2">
     <img src="<?= base_url(); ?>public/images/wishbone_crop.png" height="20" width="20">
   </div>
   <?php if (is_array($videos) && count($videos) > 0): ?>
-    <div class="col-sm-1 col-sm-offset-1">
+    <div class="col-sm-1 col-xs-1 col-sm-offset-1">
         <a class="a_nostyle" href="<?= base_url(); ?>user/<?= rawurlencode($user->username) ?>?filter=videos"><span>videos</span></a>
     </div>
   <?php endif ?>

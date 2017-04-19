@@ -19,7 +19,7 @@
 </div>
 
 <div class="category_filters col-sm-10 col-sm-offset-1">
-  <div class="col-sm-1 col-xs-1">
+  <div class="col-sm-1 col-xs-2">
     <a class="a_nostyle" href="<?= base_url(); ?>category/<?= rawurlencode($category->name) ?>">
       <span data-target="<?= base_url(); ?>category/"> all</span>
     </a>
@@ -28,7 +28,7 @@
   <?php if (isset($sub_category) && !empty($sub_category)): ?>
         <?php if (count($sub_category) > 4): ?>
           <?php foreach ($sub_category as $sub): ?>
-            <div class="col-sm-2 col-xs-3 fivesub">
+            <div class="col-sm-2 col-xs-3 fivesub sub_category_div">
               <a class="a_nostyle" href="<?= base_url(); ?>category/<?= rawurlencode($category->name) ?>?filter=<?= rawurlencode($sub->name); ?>">
                   <span data-target="<?= base_url(); ?>category/"> . <?= $sub->name; ?></span>
                 </a>
@@ -36,7 +36,7 @@
           <?php endforeach ?>
         <?php else: ?>
           <?php foreach ($sub_category as $sub): ?>
-            <div class="col-sm-2 col-xs-3">
+            <div class="col-sm-2 col-xs-3 sub_category_div">
              <a class="a_nostyle" href="<?= base_url(); ?>category/<?= rawurlencode($category->name) ?>?filter=<?= rawurlencode($sub->name); ?>">
                   <span data-target="<?= base_url(); ?>category/"> . <?= $sub->name; ?></span>
                 </a>

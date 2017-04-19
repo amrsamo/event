@@ -26,7 +26,7 @@
     </div>
 
     <!-- SECOND ROW USERNAME -->
-    <div class="row nospace">
+    <div class="row nospace category_user_div_name">
       <div class="col-sm-12 col-xs-12">
         <a href="<?= base_url(); ?>user/<?= $user->username; ?>">
           <p class="title"><?= $user->username; ?></p>
