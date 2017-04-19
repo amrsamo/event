@@ -1,9 +1,9 @@
 
 
-    <div class="col-sm-6 category_user_div">
+    <div class="col-sm-6 col-xs-12 category_user_div">
     <!-- FIRST ROW - IMAGE AND FOLLOW BTN -->
     <div class="row nospace">
-      <div class="col-sm-3 nospace">
+      <div class="col-sm-3 col-xs-3 nospace">
         <a class="user_image" href="<?= base_url(); ?>user/<?= $user->username; ?>">
           <?php if (isset($user->profile_picture)): ?>
               <img src="<?= base_url().$user->profile_picture->source_url;?>" class="img-circle img-responsive">
@@ -12,7 +12,7 @@
             <?php endif ?>
         </a>
       </div>
-      <div class="col-sm-2 col-sm-offset-1">
+      <div class="col-sm-2 col-xs-3 col-sm-offset-1">
          <!-- <button class="btn_follow">follow</button> -->
 
          <button style="<?= ($user->relation)? '' : 'display:none;' ; ?>" value="<?= $user->user_id; ?>" id="unfollow_<?= $user->user_id; ?>" class="unfollowBTN btn_follow">
@@ -27,7 +27,7 @@
 
     <!-- SECOND ROW USERNAME -->
     <div class="row nospace">
-      <div class="col-sm-12">
+      <div class="col-sm-12 col-xs-12">
         <a href="<?= base_url(); ?>user/<?= $user->username; ?>">
           <p class="title"><?= $user->username; ?></p>
         </a>
@@ -38,7 +38,7 @@
 
     <!-- THIRD ROW USER IMAGES -->
     <div class="row nospace user_images_carousal">
-      <div class="col-sm-12">
+      <div class="col-sm-12 col-xs-12">
 
         <ul class="bxslider">
             <?php foreach ($user->media as $x): ?>

@@ -10,7 +10,7 @@
 
 
 
-<div class="col-sm-10 col-sm-offset-1 user_profile">
+<div class="col-sm-10  col-sm-offset-1 user_profile">
     
     <div class="row nospace">
         <div class="col-sm-2 nospace">
@@ -32,7 +32,7 @@
 
     <div class="row nospace">
       <div class="col-sm-8 col-sm-offset-2 user_info">
-        <div class="col-sm-10 bio_section">
+        <div class="col-sm-10 col-xs-10 bio_section">
           <div class="col-sm-12">
             <h2>BIO</h2>
             <p><?= $user->bio; ?></p>
@@ -62,10 +62,10 @@
             </p>
           </div>
         </div>
-        <div class="col-sm-2 contacts_section">
+        <div class="col-sm-2 col-xs-2 contacts_section">
           <?php if (isset($social)): ?>
             <?php foreach ($social as $x): ?>
-              <div class="col-sm-12 nospace">
+              <div class="col-sm-12 col-xs-10 nospace">
                 <a href="<?= $x->link; ?>">
                   <img class="img-responsive"  src="<?= base_url(); ?>public/images/landing/<?= $x->image; ?>">
                 </a>
@@ -126,19 +126,19 @@
 
  <?php foreach ($media as $x): ?>
 
-      <div class="col-sm-4 single_media_div nospace">
+      <div class="col-sm-4 col-xs-4 single_media_div nospace">
         <a class="mediaModal" id="<?= $x->id;?>" href="<?= base_url().$x->source_url; ?>" data-title="A random title" data-footer="A custom footer text" data-gallery="example-gallery" >
                 <img data-toggle="modal" data-target="#user_media_<?= $x->id;?>" class="img-responsive" src="<?= base_url().$x->source_url; ?>">
         </a>
         <div class="single_media_div_info">
           <?php if ($x->like): ?>
-              <div value="<?= $x->id; ?>" id="<?= $x->id; ?>" class="heart_div like unlikeBTN">
+              <!-- <div value="<?= $x->id; ?>" id="<?= $x->id; ?>" class="heart_div like unlikeBTN">
                 <p><?= $x->statistics->likes; ?></p>
-              </div>
+              </div> -->
           <?php else: ?>
-              <div value="<?= $x->id; ?>" id="<?= $x->id; ?>" class="heart_div unlike likeBTN">
+              <<!-- div value="<?= $x->id; ?>" id="<?= $x->id; ?>" class="heart_div unlike likeBTN">
                 <p><?= $x->statistics->likes; ?></p>
-              </div>
+              </div> -->
           <?php endif ?> 
         </div>
       </div>

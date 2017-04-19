@@ -30,7 +30,7 @@
     
 
   
-    <nav class="hidden-xs   navbar navbar-trans navbar-fixed-top" role="navigation" style="visibility: hidden">
+    <nav class="hidden-xs navbar navbar-trans navbar-fixed-top" role="navigation" style="visibility: hidden">
     <div class="wide-container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
@@ -128,7 +128,7 @@
             </div>
 
 
-           <!--  <ul class="visible-xs nav navbar-nav">
+            <!-- <ul class="visible-xs nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
                 <li class="dropdown">
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>

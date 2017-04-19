@@ -52,6 +52,7 @@
 
 </section>
 
+
 <div class="newbanner text-center" id="categories">
   <span>
     CATEGORIES
