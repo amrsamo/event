@@ -239,25 +239,29 @@
       <div class="carousel-inner">
           <?php $count=0; ?>
           <?php foreach ($trending as $user): ?>
-            <div class="item <?php if($count == 0 ) echo 'active'; ?>">
-              <img src="<?= base_url().$user->media[0]->source_url; ?>" ">
+            <div class="col-sm-12 col-xs-12 item <?php if($count == 0 ) echo 'active'; ?>">
+              <img class="img-responsive" src="<?= base_url().$user->media[0]->source_url; ?>" ">
                       <!-- Static Header -->
                       <a href="<?= base_url(); ?>user/<?= $user->username; ?>">
-                        <div class="header-text hidden-xs">
+                        <div class="header-text">
                           <div class="row">
-                            <div class="col-sm-10 text-center nospace">
+                            <div class="col-sm-5 col-xs-10 text-center ">
                                 <img class="img-circle img-responsive" src="<?= base_url().$user->source_url; ?>">
+                            </div>
+                            <div class="col-sm-7 col-xs-10 text-center ">
+                                <h2><?= $user->username; ?></h2>
+                                <span><?= $user->type_name ?></span>
                             </div>
                             <!-- <div class="col-sm-6 pull-right">
                               <button class="btn_header">Go To Profile</button>
                             </div> -->
                           </div>
-                          <div class="row">
-                            <div class="col-sm-12 nospace text-center">
+                          <!-- <div class="row">
+                            <div class="col-sm-12 col-xs-12  text-center">
                               <h2><?= $user->username; ?></h2>
                               <span><?= $user->type_name ?></span>
                             </div>
-                          </div>
+                          </div> -->
                       </div><!-- /header-text -->
                       </a>
             </div>
