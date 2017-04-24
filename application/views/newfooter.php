@@ -52,8 +52,8 @@
                         <input name="password" type="password" class="form-control input-lg" placeholder="Password">
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-main btn-lg btn-block">Sign In</button>
-                        <span class="pull-right"><a href="#">Register</a></span><span><a href="#">Need help?</a></span>
+                        <button class="btn btn_header btn-lg btn-block">Sign In</button>
+                        <!-- <span class="pull-right"><a href="#">Register</a></span><span><a href="#">Need help?</a></span> -->
                     </div>
                 </form>
             </div>
@@ -73,7 +73,7 @@
                         <input type="email" name="email" value="<?= ( isset($input)? $input['email'] : (isset($mail)? $mail : '') );?>" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4" required>
                     </div>
                     <div class="form-group">
-                       <input type="submit" name="register" value="Register Now" class="btn btn-main btn-block " tabindex="7"></div>
+                       <input type="submit" name="register" value="Register Now" class="btn btn_header btn-block " tabindex="7"></div>
                     </div>
                 </form>
             </div>

@@ -773,6 +773,19 @@ a:hover {
 }
 
 
+.mobile_nav{
+  background-color: black;
+  padding-left: 5%;
+}
+
+.mobile_nav a{
+  background-color: black !important;
+}
+
+.mobile_nav button{
+  margin-left:50%;
+}
+
 @media (max-width: 767px) {
     body{/*font:300 12px/12px Roboto,Arial,Helvetica;*/}
 
@@ -826,6 +839,15 @@ a:hover {
 
     .usermediacontent{
       border:1px solid white;
+    }
+
+    .nav{
+      height: auto;
+    }
+
+    .wide-container{
+      width: 100%;
+      overflow: hidden;
     }
 }
 

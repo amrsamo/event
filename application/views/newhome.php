@@ -87,14 +87,12 @@
 
 
 <div class="newbanner text-center" id="about">
-  <div class="row">
     <span>
       ABOUT
     </span>
-  </div>
-    <div class="col-sm-8 col-sm-offset-2 about_sub">
+    <!-- <div class="col-sm-8 col-sm-offset-2 about_sub">
       <p>Nobody should convince you they know better. When it comes to your very own event, You might just need some guidance and hints. Thats's all !!</p>
-    </div>
+    </div> -->
 </div>
 
 <section class="container-fluid"  style="min-height: 0px;">
