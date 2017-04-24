@@ -248,10 +248,10 @@
                             <div class="col-sm-5 col-xs-10 text-center ">
                                 <img class="img-circle img-responsive" src="<?= base_url().$user->source_url; ?>">
                             </div>
-                            <div class="col-sm-7 col-xs-10 text-center ">
+                            <!-- <div class="col-sm-7 col-xs-10 text-center ">
                                 <h2><?= $user->username; ?></h2>
                                 <span><?= $user->type_name ?></span>
-                            </div>
+                            </div> -->
                             <!-- <div class="col-sm-6 pull-right">
                               <button class="btn_header">Go To Profile</button>
                             </div> -->
