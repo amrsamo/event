@@ -42,7 +42,8 @@ html,body {
     /*max-height: 550px*/
     margin:0 auto;
     /*margin-top:15%;*/
-    max-height: 100% !important;
+    height:500px !important;
+    /*max-height: 100% !important;*/
 }
 
 .carousel-control {
