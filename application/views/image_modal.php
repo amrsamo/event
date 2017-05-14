@@ -18,24 +18,24 @@
             <div class="col-sm-2 col-xs-2">
               <!-- <p>Like</p> -->
               <?php if ($x->like): ?>
-                    <div value="<?= $x->id; ?>" id="<?= $x->id; ?>" class="col-sm-2 heart_div img-responsive like unlikeBTN">
-                      <!-- <p><?= $x->statistics->likes; ?></p> -->
-                    </div>
-                    <p><?= $x->statistics->likes; ?></p>
+                    <!-- <div value="<?= $x->id; ?>" id="<?= $x->id; ?>" class="col-sm-2 heart_div img-responsive like unlikeBTN">
+                      <p><?= $x->statistics->likes; ?></p>
+                    </div> -->
+                    <!-- <p><?= $x->statistics->likes; ?></p> -->
                 <?php else: ?>
-                    <div value="<?= $x->id; ?>" id="<?= $x->id; ?>" class="col-sm-2 heart_div img-responsive unlike likeBTN">
-                      <!-- <p><?= $x->statistics->likes; ?></p> -->
+                    <!-- <div value="<?= $x->id; ?>" id="<?= $x->id; ?>" class="col-sm-2 heart_div img-responsive unlike likeBTN">
+                      <p><?= $x->statistics->likes; ?></p>
                     </div>
-                    <p style="clear:both;"><?= $x->statistics->likes; ?></p>
+                     <p style="clear:both;"><?= $x->statistics->likes; ?></p> -->
                 <?php endif ?>
             </div>
 
              <div class="col-sm-2 col-xs-2">
               <!-- <p>Views</p> -->
-              <div class="col-sm-4">
+             <!--  <div class="col-sm-4">
                 <i style="font-size: 140%;" class="fa  fa-eye" aria-hidden="true"></i>
                 <p>120</p>
-              </div>
+              </div> -->
             </div>
             <div class="col-sm-2 col-xs-2">
               <h2><a href="javascript:void(0);" data-dismiss="modal">&times;Close</a></h2>

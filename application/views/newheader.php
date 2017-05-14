@@ -32,9 +32,8 @@
 
   
     <nav class="navbar navbar-trans navbar-fixed-top" role="navigation" style="visibility: hidden">
-    <div class="wide-container">
         <div class="navbar-header">
-            <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
+            <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -48,9 +47,9 @@
               <li><a href="#categories">categories</a></li>
               <li><a href="#trending">trending</a></li>
               <li><a href="#about">about</a></li>
-              <li>
+              <li style="margin-top: 2%;">
                 <button data-toggle="modal" data-target="#loginModal" class=" btn_header" >login</button></li>
-              <li>
+              <li style="margin-top: 2%;">
                   <button data-toggle="modal" data-target="#signUpPopUp" class=" btn_header" >sign up</button>
               </li>
 
@@ -73,7 +72,6 @@
             </ul>
         </div>  
         <div class="navbar-collapse collapse" id="navbar-collapsible" >
-            
             <div class="hidden-xs col-sm-5 nospace nav navbar-nav navbar-left nospace">
                 <div class="left_header_content" style="height:40px;background-color:black !important;color: white;">
                     <div class="header_link_div big_header header_hover col-sm-3 text-center">
@@ -168,7 +166,6 @@
             
             
         </div>
-    </div>
 </nav>
 
 
