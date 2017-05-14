@@ -293,7 +293,7 @@ $(".navbar-nav a").click(function()
     var href = $(this).attr('href');
     if($(href).length == 0)
     {
-      if(href == '#categories' || href == '#')
+      if(href == '#' || href == '#')
       {
 
       }
