@@ -234,7 +234,7 @@ class Home extends CI_Controller {
 			}
 		}
 
-		$conditions = array("user.id <"=>$_POST['min_id']);
+		$conditions = array("user.id <"=>$_POST['min_id'],'rank'=>100);
 		$users = $this->Adminuser->getUsersByType($conditions,$categoryTypesArray,9);
 
 		$this->data['users'] = array();
