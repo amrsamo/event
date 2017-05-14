@@ -10,7 +10,7 @@
             <div class="col-sm-4 col-xs-4 text-center">
               <a href="">
                 <!-- <p><?= $user->username; ?></p> -->
-                <div class="col-sm-2 col-sm-offset-5">
+                <div class="col-sm-4 col-sm-offset-5">
                   <img class="img-responsive img-circle" src="<?= base_url().$user->profile_picture->source_url; ?>">
                 </div>
               </a>
@@ -67,7 +67,7 @@
         </div> -->
         <div class="row">
           <div class="col-sm-12">
-                <img style="display: block;margin:0 auto;width:auto;" src="<?= base_url().$x->source_url; ?>">
+                <img style="display: block;margin:0 auto;width:100%;" src="<?= base_url().$x->source_url; ?>">
           </div>
         </div>
         
